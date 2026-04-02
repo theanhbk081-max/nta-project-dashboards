@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NTA Project Dashboards</title>
+  <link rel="stylesheet" href="/_shared/theme.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .hero {
+      text-align: center;
+      padding: 4rem 1.5rem 3rem;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #818cf8, #34d399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.75rem;
+    }
+    .hero p {
+      color: var(--text-secondary);
+      font-size: 1.125rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+    .project-card {
+      text-decoration: none;
+      color: inherit;
+    }
+    .project-card .card {
+      height: 100%;
+      cursor: pointer;
+    }
+    .project-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .project-card p {
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+    }
+    .project-meta {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .empty-state {
+      text-align: center;
+      padding: 4rem 1.5rem;
+      color: var(--text-muted);
+    }
+    .empty-state p { font-size: 1rem; }
+
+    @media (max-width: 640px) {
+      .hero { padding: 2.5rem 1rem 2rem; }
+      .hero h1 { font-size: 1.75rem; }
+      .projects-grid { grid-template-columns: 1fr; padding: 0 1rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>NTA Project Dashboards</h1>
+  <p>Auto-generated dashboards cho các dự án. Mỗi project có trang riêng, cập nhật real-time từ dữ liệu team.</p>
+</div>
+
+<div class="projects-grid" id="projects">
+  <!-- Populated by JS from registry below -->
+</div>
+
+<div class="empty-state" id="empty" style="display:none">
+  <p>Chưa có project nào. Dùng <code>project_dashboard(action="generate")</code> để tạo dashboard đầu tiên.</p>
+</div>
+
+<script>
+  // === PROJECT REGISTRY ===
+  // Add new projects here. Agent tool appends entries after generation.
+  const PROJECTS = [
+    // {
+    //   slug: "nta-core-team",
+    //   name: "NTA Core Team",
+    //   description: "Agent team dashboard — tasks, timeline, workload, activity",
+    //   emoji: "🤖",
+    //   tags: ["team", "agents"],
+    //   updatedAt: "2026-04-02"
+    // },
+  ];
+
+  const grid = document.getElementById('projects');
+  const empty = document.getElementById('empty');
+
+  if (PROJECTS.length === 0) {
+    empty.style.display = 'block';
+  } else {
+    PROJECTS.forEach(function(p) {
+      const a = document.createElement('a');
+      a.href = '/' + p.slug + '/';
+      a.className = 'project-card';
+      a.innerHTML = `
+        <div class="card">
+          <h3>${p.emoji || '📊'} ${p.name}</h3>
+          <p>${p.description || ''}</p>
+          <div class="project-meta">
+            ${(p.tags || []).map(t => `<span class="badge badge-info">${t}</span>`).join('')}
+            ${p.updatedAt ? `<span class="badge badge-muted">Updated: ${p.updatedAt}</span>` : ''}
+          </div>
+        </div>
+      `;
+      grid.appendChild(a);
+    });
+  }
+</script>
+
+</body>
+</html>
