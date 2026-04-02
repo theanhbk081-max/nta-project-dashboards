@@ -36,11 +36,22 @@ To update a dashboard page, the agent reads from memory and writes to HTML.
 - No schema migrations needed for each new page type
 - The auto-generated `index.html` handles structured DB data (task KPIs, team workload)
 
+### Memory ↔ Dashboard Mapping
+
+Memory files and dashboard pages use the **same slug**:
+
+```
+memory/{slug}/milestones.md    →    /{slug}/milestones.html
+memory/{slug}/decisions.md     →    /{slug}/decisions.html
+memory/{slug}/overview.md      →    /{slug}/index.html (or custom overview)
+memory/{slug}/people.md        →    /{slug}/team.html
+```
+
 ### Update Flow
 
 ```
-1. memory_search("milestones") or memory_get("project-milestones")
-   → Get current data from agent memory
+1. memory_get("memory/{slug}/milestones.md")
+   → Get current project data from agent memory
 
 2. filesystem(read, path="/{slug}/milestones.html")
    → Read current HTML page
@@ -61,6 +72,13 @@ When project data changes (new decision, milestone status update, sprint complet
 1. **Always update memory first** — memory is the source of truth
 2. Then update the dashboard HTML to reflect the change
 3. Both updates can happen in the same agent turn
+
+### Multi-Project Isolation
+
+Each project's data is isolated by slug in both memory and dashboard:
+- Agent working on `gearvn-lcd`: reads `memory/gearvn-lcd/milestones.md`, writes `gearvn-lcd/milestones.html`
+- Agent working on `nta-core`: reads `memory/nta-core/milestones.md`, writes `nta-core/milestones.html`
+- Cross-project overview: `memory/projects.md` has all projects listed
 
 ## Creating a New Project
 
