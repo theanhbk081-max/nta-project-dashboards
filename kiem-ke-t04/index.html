@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hệ thống Kiểm kê Tự động GearVN | T04/2026 — Dashboard</title>
+<title>Kiểm Kê Tồn Kho T04/2026 — Dashboard</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
 <script>tailwind.config={darkMode:'class'}</script>
@@ -49,8 +49,8 @@
     <div class="flex items-center gap-3">
       <span class="text-2xl">📊</span>
       <div>
-        <div class="font-bold text-sm gradient-text">Hệ thống Kiểm kê Tự động GearVN | T04/2026</div>
-        <div class="text-xs text-gray-500">NTA Core Team · 02/04/2026 23:34</div>
+        <div class="font-bold text-sm gradient-text">Kiểm Kê Tồn Kho T04/2026</div>
+        <div class="text-xs text-gray-500">NTA Core Team · 03/04/2026 02:01</div>
       </div>
     </div>
     <div class="hidden md:flex items-center gap-1 text-sm">
@@ -61,7 +61,7 @@
       <button class="tab-btn" onclick="showTab('activity',this)">📋 Hoạt động</button>
     </div>
     <div class="flex items-center gap-2">
-      <span class="badge badge-blocked">⛔ 2 blocked</span>
+      
       
     </div>
   </div>
@@ -72,25 +72,25 @@
   <div class="absolute inset-0 opacity-15" style="background:radial-gradient(ellipse at 30% 50%,#10b981 0%,transparent 60%),radial-gradient(ellipse at 70% 50%,#3b82f6 0%,transparent 60%)"></div>
   <div class="relative max-w-7xl mx-auto px-4 py-10 md:py-14 text-center">
     <div class="inline-flex items-center gap-2 mb-3 px-4 py-2 rounded-full text-sm" style="background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.3);color:#34d399">
-      <span class="pulse">●</span> 1/7 tasks hoàn thành · 14.3%
+      <span class="pulse">●</span> 7/8 tasks hoàn thành · 87.5%
     </div>
-    <h1 class="text-3xl md:text-5xl font-black gradient-text mb-2">Hệ thống Kiểm kê Tự động GearVN | T04/2026</h1>
+    <h1 class="text-3xl md:text-5xl font-black gradient-text mb-2">Kiểm Kê Tồn Kho T04/2026</h1>
     <p class="text-gray-500">NTA Core Team · 2 thành viên</p>
     <div class="grid grid-cols-2 md:grid-cols-5 gap-3 max-w-4xl mx-auto mt-6">
       <div class="card p-4 text-center" style="border-color:rgba(255,255,255,.1)">
-        <div class="kpi-value text-white">7</div>
+        <div class="kpi-value text-white">8</div>
         <div class="kpi-label">Tổng tasks</div>
       </div>
       <div class="card p-4 text-center" style="border-color:rgba(16,185,129,.4)">
-        <div class="kpi-value text-emerald-400">14.3%</div>
+        <div class="kpi-value text-emerald-400">87.5%</div>
         <div class="kpi-label">Hoàn thành</div>
       </div>
       <div class="card p-4 text-center" style="border-color:rgba(59,130,246,.4)">
-        <div class="kpi-value text-blue-400">3</div>
+        <div class="kpi-value text-blue-400">0</div>
         <div class="kpi-label">Đang làm</div>
       </div>
       <div class="card p-4 text-center" style="border-color:rgba(239,68,68,.4)">
-        <div class="kpi-value text-red-400">2</div>
+        <div class="kpi-value text-red-400">0</div>
         <div class="kpi-label">Bị chặn</div>
       </div>
       <div class="card p-4 text-center" style="border-color:rgba(251,191,36,.4)">
@@ -107,42 +107,16 @@
 <section id="tab-overview">
   
   
-  <div class="mb-6">
-    <h2 class="text-lg font-bold mb-3 flex items-center gap-2">🚨 Cảnh báo</h2>
-    <div class="space-y-3">
-      
-      <div class="card p-4 flex items-start gap-3" style="border-color:rgba(239,68,68,.4);background:rgba(239,68,68,.03)">
-        <span class="text-xl">⛔</span>
-        <div class="flex-1 min-w-0">
-          <div class="font-semibold text-red-400">T-005-45b8 — Phát triển PRD V2 - Kế toán reconciliation và tích hợp hóa đơn</div>
-          <div class="text-sm text-gray-500">Owner: nta-opus · Blocked</div>
-        </div>
-        <span class="badge badge-blocked shrink-0">Blocked</span>
-      </div>
-      
-      <div class="card p-4 flex items-start gap-3" style="border-color:rgba(239,68,68,.4);background:rgba(239,68,68,.03)">
-        <span class="text-xl">⛔</span>
-        <div class="flex-1 min-w-0">
-          <div class="font-semibold text-red-400">T-004-8b6b — Training nhân sự &#43; pilot Daily kiểm kê</div>
-          <div class="text-sm text-gray-500">Owner: nta-opus · Blocked</div>
-        </div>
-        <span class="badge badge-blocked shrink-0">Blocked</span>
-      </div>
-      
-      
-    </div>
-  </div>
-  
 
   
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
     <div class="card p-5">
       <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Phân bố trạng thái</h3>
       <div class="space-y-2">
-        <div class="flex justify-between items-center"><span class="badge badge-completed">✅ Hoàn thành</span><span class="text-sm font-mono">1</span></div>
-        <div class="flex justify-between items-center"><span class="badge badge-in_progress">🔄 Đang làm</span><span class="text-sm font-mono">3</span></div>
+        <div class="flex justify-between items-center"><span class="badge badge-completed">✅ Hoàn thành</span><span class="text-sm font-mono">7</span></div>
         
-        <div class="flex justify-between items-center"><span class="badge badge-blocked">⛔ Bị chặn</span><span class="text-sm font-mono">2</span></div>
+        
+        
         
         
         <div class="flex justify-between items-center"><span class="badge badge-cancelled">🚫 Đã hủy</span><span class="text-sm font-mono">1</span></div>
@@ -154,11 +128,11 @@
       <div class="space-y-2 text-sm">
         <div class="flex justify-between"><span class="text-gray-500">Team members</span><span class="font-mono">2</span></div>
         
-        <div class="flex justify-between"><span class="text-gray-500">KG entities</span><span class="font-mono">89</span></div>
-        <div class="flex justify-between"><span class="text-gray-500">KG relations</span><span class="font-mono">170</span></div>
-        <div class="flex justify-between"><span class="text-gray-500">Tiến độ</span><span class="font-mono">1/7</span></div>
+        <div class="flex justify-between"><span class="text-gray-500">KG entities</span><span class="font-mono">114</span></div>
+        <div class="flex justify-between"><span class="text-gray-500">KG relations</span><span class="font-mono">211</span></div>
+        <div class="flex justify-between"><span class="text-gray-500">Tiến độ</span><span class="font-mono">7/8</span></div>
       </div>
-      <div class="progress-bar mt-3"><div class="progress-fill" style="width:14.3%"></div></div>
+      <div class="progress-bar mt-3"><div class="progress-fill" style="width:87.5%"></div></div>
     </div>
   </div>
 </section>
@@ -186,10 +160,21 @@
         </tr></thead>
         <tbody id="taskBody">
           
-          <tr data-status="blocked" data-search="T-005-45b8 Phát triển PRD V2 - Kế toán reconciliation và tích hợp hóa đơn nta-opus">
+          <tr data-status="completed" data-search="T-006-d30e Export PRD V1 file to user workspace nta-opus">
+            <td class="font-mono text-xs text-gray-500">T-006-d30e</td>
+            <td class="max-w-xs truncate">Export PRD V1 file to user workspace</td>
+            <td><span class="badge badge-completed">Hoàn thành</span></td>
+            <td class="text-sm text-gray-400">nta-opus</td>
+            <td style="min-width:100px">
+              <span class="text-gray-600 text-xs">—</span>
+            </td>
+            <td class="text-xs text-gray-500 whitespace-nowrap">03/04/2026 00:27</td>
+          </tr>
+          
+          <tr data-status="completed" data-search="T-005-45b8 Phát triển PRD V2 - Kế toán reconciliation và tích hợp hóa đơn nta-opus">
             <td class="font-mono text-xs text-gray-500">T-005-45b8</td>
             <td class="max-w-xs truncate">Phát triển PRD V2 - Kế toán reconciliation và tích hợp hóa đơn</td>
-            <td><span class="badge badge-blocked">Bị chặn</span></td>
+            <td><span class="badge badge-completed">Hoàn thành</span></td>
             <td class="text-sm text-gray-400">nta-opus</td>
             <td style="min-width:100px">
               <span class="text-gray-600 text-xs">—</span>
@@ -197,10 +182,10 @@
             <td class="text-xs text-gray-500 whitespace-nowrap">02/04/2026 23:32</td>
           </tr>
           
-          <tr data-status="blocked" data-search="T-004-8b6b Training nhân sự &#43; pilot Daily kiểm kê nta-opus">
+          <tr data-status="completed" data-search="T-004-8b6b Training nhân sự &#43; pilot Daily kiểm kê nta-opus">
             <td class="font-mono text-xs text-gray-500">T-004-8b6b</td>
             <td class="max-w-xs truncate">Training nhân sự &#43; pilot Daily kiểm kê</td>
-            <td><span class="badge badge-blocked">Bị chặn</span></td>
+            <td><span class="badge badge-completed">Hoàn thành</span></td>
             <td class="text-sm text-gray-400">nta-opus</td>
             <td style="min-width:100px">
               <span class="text-gray-600 text-xs">—</span>
@@ -208,10 +193,10 @@
             <td class="text-xs text-gray-500 whitespace-nowrap">02/04/2026 23:31</td>
           </tr>
           
-          <tr data-status="in_progress" data-search="T-003-9f10 Thiết lập Ticket Workflow tự động - SLA 60 phút &#43; 24 giờ nta-opus">
+          <tr data-status="completed" data-search="T-003-9f10 Thiết lập Ticket Workflow tự động - SLA 60 phút &#43; 24 giờ nta-opus">
             <td class="font-mono text-xs text-gray-500">T-003-9f10</td>
             <td class="max-w-xs truncate">Thiết lập Ticket Workflow tự động - SLA 60 phút &#43; 24 giờ</td>
-            <td><span class="badge badge-in_progress">Đang làm</span></td>
+            <td><span class="badge badge-completed">Hoàn thành</span></td>
             <td class="text-sm text-gray-400">nta-opus</td>
             <td style="min-width:100px">
               <span class="text-gray-600 text-xs">—</span>
@@ -219,10 +204,10 @@
             <td class="text-xs text-gray-500 whitespace-nowrap">02/04/2026 23:31</td>
           </tr>
           
-          <tr data-status="in_progress" data-search="T-002-2a1e Thiết lập cấu hình Daily kiểm kê - SKU priority list nta-opus">
+          <tr data-status="completed" data-search="T-002-2a1e Thiết lập cấu hình Daily kiểm kê - SKU priority list nta-opus">
             <td class="font-mono text-xs text-gray-500">T-002-2a1e</td>
             <td class="max-w-xs truncate">Thiết lập cấu hình Daily kiểm kê - SKU priority list</td>
-            <td><span class="badge badge-in_progress">Đang làm</span></td>
+            <td><span class="badge badge-completed">Hoàn thành</span></td>
             <td class="text-sm text-gray-400">nta-opus</td>
             <td style="min-width:100px">
               <span class="text-gray-600 text-xs">—</span>
@@ -230,14 +215,13 @@
             <td class="text-xs text-gray-500 whitespace-nowrap">02/04/2026 23:31</td>
           </tr>
           
-          <tr data-status="in_progress" data-search="T-001-d5c6 Phát triển PRD V1 - Giao diện vận hành kiểm kê với quét IMEI nta-opus">
+          <tr data-status="completed" data-search="T-001-d5c6 Phát triển PRD V1 - Giao diện vận hành kiểm kê với quét IMEI nta-opus">
             <td class="font-mono text-xs text-gray-500">T-001-d5c6</td>
             <td class="max-w-xs truncate">Phát triển PRD V1 - Giao diện vận hành kiểm kê với quét IMEI</td>
-            <td><span class="badge badge-in_progress">Đang làm</span></td>
+            <td><span class="badge badge-completed">Hoàn thành</span></td>
             <td class="text-sm text-gray-400">nta-opus</td>
             <td style="min-width:100px">
-              <div class="flex items-center gap-2"><div class="progress-bar flex-1"><div class="progress-fill" style="width:40%"></div></div><span class="text-xs text-gray-500 font-mono">40%</span></div>
-              
+              <span class="text-gray-600 text-xs">—</span>
             </td>
             <td class="text-xs text-gray-500 whitespace-nowrap">02/04/2026 23:31</td>
           </tr>
@@ -307,11 +291,11 @@
         </div>
       </div>
       <div class="grid grid-cols-3 gap-2 text-center">
-        <div><div class="text-lg font-bold text-white">7</div><div class="text-xs text-gray-500">Tổng</div></div>
-        <div><div class="text-lg font-bold text-blue-400">3</div><div class="text-xs text-gray-500">Active</div></div>
-        <div><div class="text-lg font-bold text-emerald-400">1</div><div class="text-xs text-gray-500">Done</div></div>
+        <div><div class="text-lg font-bold text-white">8</div><div class="text-xs text-gray-500">Tổng</div></div>
+        <div><div class="text-lg font-bold text-blue-400">0</div><div class="text-xs text-gray-500">Active</div></div>
+        <div><div class="text-lg font-bold text-emerald-400">7</div><div class="text-xs text-gray-500">Done</div></div>
       </div>
-      <div class="progress-bar mt-3"><div class="progress-fill" style="width:14%"></div></div>
+      <div class="progress-bar mt-3"><div class="progress-fill" style="width:88%"></div></div>
     </div>
     
   </div>
@@ -322,6 +306,266 @@
   <div class="card p-5">
     <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Hoạt động gần đây</h3>
     <div class="space-y-3">
+      
+      <div class="flex items-start gap-3 text-sm">
+        <span class="event-icon mt-0.5">✅</span>
+        <div class="flex-1 min-w-0">
+          <span class="text-gray-300 font-medium">completed</span>
+          <span class="text-gray-500"> by nta-opus</span>
+          <div class="text-xs text-gray-600 mt-0.5 truncate">{}</div>
+        </div>
+        <span class="text-xs text-gray-600 whitespace-nowrap">03/04/2026 00:29</span>
+      </div>
+      
+      <div class="flex items-start gap-3 text-sm">
+        <span class="event-icon mt-0.5">📌</span>
+        <div class="flex-1 min-w-0">
+          <span class="text-gray-300 font-medium">dispatched</span>
+          <span class="text-gray-500"> by fallback_dispatch</span>
+          <div class="text-xs text-gray-600 mt-0.5 truncate">{}</div>
+        </div>
+        <span class="text-xs text-gray-600 whitespace-nowrap">03/04/2026 00:27</span>
+      </div>
+      
+      <div class="flex items-start gap-3 text-sm">
+        <span class="event-icon mt-0.5">🆕</span>
+        <div class="flex-1 min-w-0">
+          <span class="text-gray-300 font-medium">created</span>
+          <span class="text-gray-500"> by nta-leader</span>
+          <div class="text-xs text-gray-600 mt-0.5 truncate">{}</div>
+        </div>
+        <span class="text-xs text-gray-600 whitespace-nowrap">03/04/2026 00:27</span>
+      </div>
+      
+      <div class="flex items-start gap-3 text-sm">
+        <span class="event-icon mt-0.5">✅</span>
+        <div class="flex-1 min-w-0">
+          <span class="text-gray-300 font-medium">completed</span>
+          <span class="text-gray-500"> by nta-opus</span>
+          <div class="text-xs text-gray-600 mt-0.5 truncate">{}</div>
+        </div>
+        <span class="text-xs text-gray-600 whitespace-nowrap">03/04/2026 00:04</span>
+      </div>
+      
+      <div class="flex items-start gap-3 text-sm">
+        <span class="event-icon mt-0.5">📌</span>
+        <div class="flex-1 min-w-0">
+          <span class="text-gray-300 font-medium">progress</span>
+          <span class="text-gray-500"> by </span>
+          <div class="text-xs text-gray-600 mt-0.5 truncate">{&#34;progress_step&#34;: &#34;3/4 files xong: User Guide, Training Session Plan, Pilot Execution Plan. Đang viết Quick Reference Card.&#34;, &#34;progress_percent&#34;: 80}</div>
+        </div>
+        <span class="text-xs text-gray-600 whitespace-nowrap">03/04/2026 00:03</span>
+      </div>
+      
+      <div class="flex items-start gap-3 text-sm">
+        <span class="event-icon mt-0.5">📌</span>
+        <div class="flex-1 min-w-0">
+          <span class="text-gray-300 font-medium">progress</span>
+          <span class="text-gray-500"> by </span>
+          <div class="text-xs text-gray-600 mt-0.5 truncate">{&#34;progress_step&#34;: &#34;User Guide &#43; Training Session Plan xong. Đang viết Pilot Execution Plan.&#34;, &#34;progress_percent&#34;: 60}</div>
+        </div>
+        <span class="text-xs text-gray-600 whitespace-nowrap">03/04/2026 00:01</span>
+      </div>
+      
+      <div class="flex items-start gap-3 text-sm">
+        <span class="event-icon mt-0.5">📌</span>
+        <div class="flex-1 min-w-0">
+          <span class="text-gray-300 font-medium">progress</span>
+          <span class="text-gray-500"> by </span>
+          <div class="text-xs text-gray-600 mt-0.5 truncate">{&#34;progress_step&#34;: &#34;User Guide xong. Đang viết Training Session Plan &#43; Video Script.&#34;, &#34;progress_percent&#34;: 40}</div>
+        </div>
+        <span class="text-xs text-gray-600 whitespace-nowrap">03/04/2026 00:00</span>
+      </div>
+      
+      <div class="flex items-start gap-3 text-sm">
+        <span class="event-icon mt-0.5">📌</span>
+        <div class="flex-1 min-w-0">
+          <span class="text-gray-300 font-medium">progress</span>
+          <span class="text-gray-500"> by </span>
+          <div class="text-xs text-gray-600 mt-0.5 truncate">{&#34;progress_step&#34;: &#34;Đã đọc xong PRD V1, SKU config, ticket workflow. Bắt đầu viết User Guide.&#34;, &#34;progress_percent&#34;: 20}</div>
+        </div>
+        <span class="text-xs text-gray-600 whitespace-nowrap">02/04/2026 23:58</span>
+      </div>
+      
+      <div class="flex items-start gap-3 text-sm">
+        <span class="event-icon mt-0.5">📌</span>
+        <div class="flex-1 min-w-0">
+          <span class="text-gray-300 font-medium">progress</span>
+          <span class="text-gray-500"> by </span>
+          <div class="text-xs text-gray-600 mt-0.5 truncate">{&#34;progress_step&#34;: &#34;Đọc PRD V1 và SKU config để xây dựng training materials.&#34;, &#34;progress_percent&#34;: 5}</div>
+        </div>
+        <span class="text-xs text-gray-600 whitespace-nowrap">02/04/2026 23:58</span>
+      </div>
+      
+      <div class="flex items-start gap-3 text-sm">
+        <span class="event-icon mt-0.5">✅</span>
+        <div class="flex-1 min-w-0">
+          <span class="text-gray-300 font-medium">completed</span>
+          <span class="text-gray-500"> by nta-opus</span>
+          <div class="text-xs text-gray-600 mt-0.5 truncate">{}</div>
+        </div>
+        <span class="text-xs text-gray-600 whitespace-nowrap">02/04/2026 23:57</span>
+      </div>
+      
+      <div class="flex items-start gap-3 text-sm">
+        <span class="event-icon mt-0.5">📌</span>
+        <div class="flex-1 min-w-0">
+          <span class="text-gray-300 font-medium">progress</span>
+          <span class="text-gray-500"> by </span>
+          <div class="text-xs text-gray-600 mt-0.5 truncate">{&#34;progress_step&#34;: &#34;PRD V2 hoàn thành. Đang attach file và submit kết quả.&#34;, &#34;progress_percent&#34;: 90}</div>
+        </div>
+        <span class="text-xs text-gray-600 whitespace-nowrap">02/04/2026 23:56</span>
+      </div>
+      
+      <div class="flex items-start gap-3 text-sm">
+        <span class="event-icon mt-0.5">📌</span>
+        <div class="flex-1 min-w-0">
+          <span class="text-gray-300 font-medium">progress</span>
+          <span class="text-gray-500"> by </span>
+          <div class="text-xs text-gray-600 mt-0.5 truncate">{&#34;progress_step&#34;: &#34;Data discovery done: (1) PO receipts have invoice_number &#43; MISA integration (purchase_invoice_misa_id). (2) f_inout_imei tracks all inventory movements with IMEI &#43; VAT &#43; type/mode. (3) DMS docs cover nhập/xuất/chuyển kho. (4) P&amp;L datamart exists. (5) \&#34;Bù trừ kiểm kho\&#34; movement type already exists in system. Đang viết PRD V2.&#34;, &#34;progress_percent&#34;: 35}</div>
+        </div>
+        <span class="text-xs text-gray-600 whitespace-nowrap">02/04/2026 23:49</span>
+      </div>
+      
+      <div class="flex items-start gap-3 text-sm">
+        <span class="event-icon mt-0.5">📌</span>
+        <div class="flex-1 min-w-0">
+          <span class="text-gray-300 font-medium">progress</span>
+          <span class="text-gray-500"> by </span>
+          <div class="text-xs text-gray-600 mt-0.5 truncate">{&#34;progress_step&#34;: &#34;Bắt đầu PRD V2. Đọc PRD V1 &#43; existing deliverables, khám phá accounting/PO/invoice data sources.&#34;, &#34;progress_percent&#34;: 5}</div>
+        </div>
+        <span class="text-xs text-gray-600 whitespace-nowrap">02/04/2026 23:48</span>
+      </div>
+      
+      <div class="flex items-start gap-3 text-sm">
+        <span class="event-icon mt-0.5">✅</span>
+        <div class="flex-1 min-w-0">
+          <span class="text-gray-300 font-medium">completed</span>
+          <span class="text-gray-500"> by nta-opus</span>
+          <div class="text-xs text-gray-600 mt-0.5 truncate">{}</div>
+        </div>
+        <span class="text-xs text-gray-600 whitespace-nowrap">02/04/2026 23:47</span>
+      </div>
+      
+      <div class="flex items-start gap-3 text-sm">
+        <span class="event-icon mt-0.5">📌</span>
+        <div class="flex-1 min-w-0">
+          <span class="text-gray-300 font-medium">progress</span>
+          <span class="text-gray-500"> by </span>
+          <div class="text-xs text-gray-600 mt-0.5 truncate">{&#34;progress_step&#34;: &#34;Spec hoàn thành — 12 sections: workflow architecture, data model, API endpoints, notification matrix with Lark card templates, ETL job specs, SLA dashboard, escalation matrix, implementation phases. Đang attach và complete.&#34;, &#34;progress_percent&#34;: 90}</div>
+        </div>
+        <span class="text-xs text-gray-600 whitespace-nowrap">02/04/2026 23:47</span>
+      </div>
+      
+      <div class="flex items-start gap-3 text-sm">
+        <span class="event-icon mt-0.5">📌</span>
+        <div class="flex-1 min-w-0">
+          <span class="text-gray-300 font-medium">progress</span>
+          <span class="text-gray-500"> by </span>
+          <div class="text-xs text-gray-600 mt-0.5 truncate">{&#34;progress_step&#34;: &#34;Research done: (1) Existing Lark infra mapped — PO Alert webhooks per showroom, Task API Client, OPD bot, IMEI alert webhook. (2) ETL alert pattern confirmed from Reception Standard Violations jobs. (3) PRD V1 data model &#43; API endpoints reviewed. Đang viết workflow spec.&#34;, &#34;progress_percent&#34;: 35}</div>
+        </div>
+        <span class="text-xs text-gray-600 whitespace-nowrap">02/04/2026 23:44</span>
+      </div>
+      
+      <div class="flex items-start gap-3 text-sm">
+        <span class="event-icon mt-0.5">📌</span>
+        <div class="flex-1 min-w-0">
+          <span class="text-gray-300 font-medium">progress</span>
+          <span class="text-gray-500"> by </span>
+          <div class="text-xs text-gray-600 mt-0.5 truncate">{&#34;progress_step&#34;: &#34;Bắt đầu: đọc PRD V1 &#43; config có sẵn, khám phá Lark webhooks và GSale inventory validation schema.&#34;, &#34;progress_percent&#34;: 5}</div>
+        </div>
+        <span class="text-xs text-gray-600 whitespace-nowrap">02/04/2026 23:43</span>
+      </div>
+      
+      <div class="flex items-start gap-3 text-sm">
+        <span class="event-icon mt-0.5">📌</span>
+        <div class="flex-1 min-w-0">
+          <span class="text-gray-300 font-medium">dispatched</span>
+          <span class="text-gray-500"> by dispatch_unblocked</span>
+          <div class="text-xs text-gray-600 mt-0.5 truncate">{}</div>
+        </div>
+        <span class="text-xs text-gray-600 whitespace-nowrap">02/04/2026 23:42</span>
+      </div>
+      
+      <div class="flex items-start gap-3 text-sm">
+        <span class="event-icon mt-0.5">✅</span>
+        <div class="flex-1 min-w-0">
+          <span class="text-gray-300 font-medium">completed</span>
+          <span class="text-gray-500"> by nta-opus</span>
+          <div class="text-xs text-gray-600 mt-0.5 truncate">{}</div>
+        </div>
+        <span class="text-xs text-gray-600 whitespace-nowrap">02/04/2026 23:42</span>
+      </div>
+      
+      <div class="flex items-start gap-3 text-sm">
+        <span class="event-icon mt-0.5">📌</span>
+        <div class="flex-1 min-w-0">
+          <span class="text-gray-300 font-medium">progress</span>
+          <span class="text-gray-500"> by </span>
+          <div class="text-xs text-gray-600 mt-0.5 truncate">{&#34;progress_step&#34;: &#34;Config hoàn thành: 2 files (markdown &#43; JSON) đã lưu team workspace. Bao gồm 40 fast-moving SKUs, 20 slow-moving high-value, exclude list 26 SKUs &#43; 4 categories &#43; 5 patterns. Đang attach và complete.&#34;, &#34;progress_percent&#34;: 90}</div>
+        </div>
+        <span class="text-xs text-gray-600 whitespace-nowrap">02/04/2026 23:42</span>
+      </div>
+      
+      <div class="flex items-start gap-3 text-sm">
+        <span class="event-icon mt-0.5">📌</span>
+        <div class="flex-1 min-w-0">
+          <span class="text-gray-300 font-medium">progress</span>
+          <span class="text-gray-500"> by </span>
+          <div class="text-xs text-gray-600 mt-0.5 truncate">{&#34;progress_step&#34;: &#34;Data analysis done. Inventory: 1,212 SKU active, 490 có bán 28 ngày qua. Top fast-moving: MAN-LG-27G610A-B (18.14/day), PK-BRA-LDT97-C012E (16.04/day). Top slow-moving: MacBook M1 2020 (1,477 ngày tồn). Gift items: 30&#43; SKU identified. Đang build config.&#34;, &#34;progress_percent&#34;: 60}</div>
+        </div>
+        <span class="text-xs text-gray-600 whitespace-nowrap">02/04/2026 23:39</span>
+      </div>
+      
+      <div class="flex items-start gap-3 text-sm">
+        <span class="event-icon mt-0.5">📌</span>
+        <div class="flex-1 min-w-0">
+          <span class="text-gray-300 font-medium">progress</span>
+          <span class="text-gray-500"> by </span>
+          <div class="text-xs text-gray-600 mt-0.5 truncate">{&#34;progress_step&#34;: &#34;Đã tìm thấy f_inventory (datamart_operations) — có sẵn qty_stock, avg_daily velocity, wos, stock_age. Đang query fast-moving, slow-moving, và categories.&#34;, &#34;progress_percent&#34;: 25}</div>
+        </div>
+        <span class="text-xs text-gray-600 whitespace-nowrap">02/04/2026 23:38</span>
+      </div>
+      
+      <div class="flex items-start gap-3 text-sm">
+        <span class="event-icon mt-0.5">📌</span>
+        <div class="flex-1 min-w-0">
+          <span class="text-gray-300 font-medium">progress</span>
+          <span class="text-gray-500"> by </span>
+          <div class="text-xs text-gray-600 mt-0.5 truncate">{&#34;progress_step&#34;: &#34;Bắt đầu phân tích data sources: GSale sales history, PIMv3 inventory, product categories. Khám phá schema trước.&#34;, &#34;progress_percent&#34;: 5}</div>
+        </div>
+        <span class="text-xs text-gray-600 whitespace-nowrap">02/04/2026 23:37</span>
+      </div>
+      
+      <div class="flex items-start gap-3 text-sm">
+        <span class="event-icon mt-0.5">📌</span>
+        <div class="flex-1 min-w-0">
+          <span class="text-gray-300 font-medium">dispatched</span>
+          <span class="text-gray-500"> by dispatch_unblocked</span>
+          <div class="text-xs text-gray-600 mt-0.5 truncate">{}</div>
+        </div>
+        <span class="text-xs text-gray-600 whitespace-nowrap">02/04/2026 23:36</span>
+      </div>
+      
+      <div class="flex items-start gap-3 text-sm">
+        <span class="event-icon mt-0.5">✅</span>
+        <div class="flex-1 min-w-0">
+          <span class="text-gray-300 font-medium">completed</span>
+          <span class="text-gray-500"> by nta-opus</span>
+          <div class="text-xs text-gray-600 mt-0.5 truncate">{}</div>
+        </div>
+        <span class="text-xs text-gray-600 whitespace-nowrap">02/04/2026 23:36</span>
+      </div>
+      
+      <div class="flex items-start gap-3 text-sm">
+        <span class="event-icon mt-0.5">📌</span>
+        <div class="flex-1 min-w-0">
+          <span class="text-gray-300 font-medium">progress</span>
+          <span class="text-gray-500"> by </span>
+          <div class="text-xs text-gray-600 mt-0.5 truncate">{&#34;progress_step&#34;: &#34;PRD V1 đã viết xong — 11 sections bao gồm data architecture, UI specs, API endpoints, acceptance criteria. File đã lưu team workspace.&#34;, &#34;progress_percent&#34;: 90}</div>
+        </div>
+        <span class="text-xs text-gray-600 whitespace-nowrap">02/04/2026 23:35</span>
+      </div>
       
       <div class="flex items-start gap-3 text-sm">
         <span class="event-icon mt-0.5">📌</span>
@@ -552,7 +796,7 @@
 
 
 <footer class="max-w-7xl mx-auto px-4 py-6 text-center text-xs text-gray-600 border-t" style="border-color:#2d3748">
-  Generated by GoClaw · 02/04/2026 23:34
+  Generated by GoClaw · 03/04/2026 02:01
 </footer>
 
 
@@ -594,7 +838,7 @@ function filterTasks(){
   document.getElementById('taskCount').textContent=v+'/'+document.querySelectorAll('#taskBody tr').length+' tasks';
 }
 filterTasks();
-var td=[{"week_label":"2026-W14","created":7,"completed":1}];
+var td=[{"week_label":"2026-W14","created":8,"completed":7}];
 if(td.length>0){new Chart(document.getElementById('timelineChart'),{type:'bar',data:{labels:td.map(function(d){return d.week_label}),datasets:[{label:'Tạo mới',data:td.map(function(d){return d.created}),backgroundColor:'rgba(59,130,246,0.7)',borderRadius:4},{label:'Hoàn thành',data:td.map(function(d){return d.completed}),backgroundColor:'rgba(16,185,129,0.7)',borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#94a3b8',font:{size:12}}}},scales:{x:{ticks:{color:'#64748b'},grid:{color:'rgba(255,255,255,.05)'}},y:{ticks:{color:'#64748b',stepSize:1},grid:{color:'rgba(255,255,255,.05)'},beginAtZero:true}}}});}
 </script>
 </body>
