@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><!-- PROJECT_NAME --> — Tasks</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class'}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../_shared/theme.css">
+</head>
+<body class="dark">
+
+<!-- === DASHBOARD_CONFIG === Copy from overview, keep same pages array -->
+<script>
+window.DASHBOARD_CONFIG = {
+  name: 'Project Name',
+  subtitle: 'Task Board',
+  emoji: '📊',
+  accent: '#818cf8',
+  pages: [
+    { href: 'index.html', icon: '🏠', label: 'Tổng Quan' },
+    { href: 'tasks.html', icon: '✅', label: 'Tasks' },
+    { href: 'milestones.html', icon: '🎯', label: 'Milestones' },
+    { href: 'decisions.html', icon: '⚡', label: 'Quyết Định' },
+  ],
+};
+</script>
+<div id="topnav"></div>
+<div id="bottomnav"></div>
+
+<div class="container" style="padding-top:2rem">
+
+  <!-- === HEADER === -->
+  <h1 class="gradient-text" style="font-size:2rem;font-weight:800;text-align:center">Task Board</h1>
+  <p style="text-align:center;color:var(--text-muted);margin-top:0.25rem;font-size:0.85rem">
+    <!-- Sprint 1–3 · Cập nhật 29/03/2026 · 10 OVERDUE -->
+  </p>
+
+  <!-- === QUICK STATS === -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:0.75rem;margin:1.5rem 0;max-width:700px;margin-left:auto;margin-right:auto">
+    <div class="stat-card"><div class="stat-value"><!-- 51 --></div><div class="stat-label">Total Tasks</div></div>
+    <div class="stat-card"><div class="stat-value" style="color:var(--success)"><!-- 15 --></div><div class="stat-label">Done</div></div>
+    <div class="stat-card"><div class="stat-value" style="color:var(--danger)"><!-- 10 --></div><div class="stat-label">Overdue</div></div>
+    <div class="stat-card"><div class="stat-value" style="color:var(--info)"><!-- 1 --></div><div class="stat-label">In Progress</div></div>
+    <div class="stat-card"><div class="stat-value" style="color:var(--text-muted)"><!-- 23 --></div><div class="stat-label">Pending</div></div>
+  </div>
+
+  <!-- === OVERALL PROGRESS === -->
+  <div class="card" style="margin-bottom:1.5rem">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem">
+      <strong>Overall Progress</strong>
+      <span style="color:var(--accent);font-weight:700"><!-- 29% (15/51) --></span>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" style="width:29%;background:var(--accent)"></div></div>
+    <div style="display:flex;justify-content:space-between;font-size:0.75rem;color:var(--text-muted);margin-top:0.5rem">
+      <span><!-- Tuần 1: 11/24 done · 5 overdue --></span>
+      <span><!-- Tuần 2: 4/10 done · 5 overdue --></span>
+      <span><!-- Tuần 3+: 0/17 --></span>
+    </div>
+  </div>
+
+  <!-- === FILTERS === -->
+  <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem">
+    <span style="font-size:0.8rem;color:var(--text-muted);padding-top:0.35rem">STATUS:</span>
+    <button class="filter-chip active" onclick="filterBy('status','all')">All</button>
+    <button class="filter-chip" onclick="filterBy('status','done')">✅ Done</button>
+    <button class="filter-chip" onclick="filterBy('status','overdue')">🔴 Overdue</button>
+    <button class="filter-chip" onclick="filterBy('status','pending')">⏳ Pending</button>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem">
+    <span style="font-size:0.8rem;color:var(--text-muted);padding-top:0.35rem">OWNER:</span>
+    <button class="filter-chip active" onclick="filterBy('owner','all')">All</button>
+    <!-- Add owner chips here -->
+  </div>
+
+  <!-- === TASK GROUPS === -->
+
+  <!-- Done group -->
+  <div class="task-group" data-group="done">
+    <h3 style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem">
+      <span>✅ Đã Hoàn Thành</span>
+      <span class="badge badge-success"><!-- 15 tasks --></span>
+    </h3>
+    <div class="card" style="padding:0;overflow:hidden">
+      <!-- Task row template — duplicate per task -->
+      <div class="task-row" data-status="done" data-owner="thanh" data-priority="p0">
+        <span class="task-id" style="color:var(--success)"><!-- 1.1 --></span>
+        <span class="task-subject"><!-- Chốt SKU LCD — theo nhóm size+res+brand --></span>
+        <span class="decision-tag"><!-- D-023 --></span>
+        <span class="badge badge-danger"><!-- P0 --></span>
+        <span class="badge badge-success"><!-- ✅ 22/03 --></span>
+        <span style="font-size:0.75rem;color:var(--text-muted)"><!-- @Thanh @DatHoang --></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Overdue group -->
+  <div class="task-group" data-group="overdue" style="margin-top:2rem">
+    <h3 style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem">
+      <span>🔴 Overdue — Cần Push</span>
+      <span class="badge badge-danger"><!-- 10 tasks --></span>
+    </h3>
+    <div class="card" style="padding:0;overflow:hidden">
+      <!-- Overdue task rows here -->
+      <div class="task-row" data-status="overdue" data-owner="nam" data-priority="p0">
+        <span class="task-id" style="color:var(--danger)"><!-- 2.1 --></span>
+        <span class="task-subject">
+          <!-- Meeting kế toán + Nam — luồng VAT, hạch toán -->
+          <div style="font-size:0.75rem;color:var(--text-muted);margin-top:2px">
+            <!-- 📅 Lên lịch 24/03 — vẫn chưa diễn ra! Block toàn bộ UAT→Pilot -->
+          </div>
+        </span>
+        <span class="badge badge-danger"><!-- P0 --></span>
+        <span class="badge badge-danger"><!-- 🔴 18/03 --></span>
+        <span style="font-size:0.7rem;color:var(--text-muted)"><!-- @Thanh @Nam · +8 ngày · 🔴 CRITICAL --></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pending group -->
+  <div class="task-group" data-group="pending" style="margin-top:2rem;margin-bottom:2rem">
+    <h3 style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem">
+      <span>⏳ Pending</span>
+      <span class="badge badge-muted"><!-- 23 tasks --></span>
+    </h3>
+    <div class="card" style="padding:0;overflow:hidden">
+      <!-- Pending task rows here -->
+    </div>
+  </div>
+
+</div>
+
+<!-- === FILTER JS === -->
+<script>
+function filterBy(type, value) {
+  // Update chips
+  document.querySelectorAll('.filter-chip').forEach(function(c) {
+    if (c.getAttribute('onclick').includes("'" + type + "'")) {
+      c.classList.toggle('active', c.getAttribute('onclick').includes("'" + value + "'"));
+    }
+  });
+  // Filter rows
+  document.querySelectorAll('.task-row').forEach(function(row) {
+    if (value === 'all') { row.style.display = ''; return; }
+    var match = row.getAttribute('data-' + type) === value;
+    row.style.display = match ? '' : 'none';
+  });
+}
+</script>
+<script src="../_shared/nav.js"></script>
+</body>
+</html>
