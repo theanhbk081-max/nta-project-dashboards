@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đối soát Thu tiền — Quyết Định</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class'}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../_shared/theme.css">
+</head>
+<body class="dark">
+
+<script>
+window.DASHBOARD_CONFIG = {
+  name: 'Đối soát Thu tiền',
+  subtitle: 'Quyết Định',
+  emoji: '💰',
+  accent: '#ef4444',
+  pages: [
+    { href: 'index.html', icon: '🏠', label: 'Tổng Quan' },
+    { href: 'tasks.html', icon: '📋', label: 'Tasks' },
+    { href: 'milestones.html', icon: '🎯', label: 'Milestones' },
+    { href: 'decisions.html', icon: '⚡', label: 'Quyết Định' },
+    { href: 'team.html', icon: '👥', label: 'Team' }
+  ]
+};
+</script>
+<div id="topnav"></div>
+<div id="bottomnav"></div>
+
+<div class="container" style="padding-top:2rem">
+  <h1 class="gradient-text" style="font-size:2rem;font-weight:800;text-align:center">Quyết Định Dự Án</h1>
+  <p style="text-align:center;color:var(--text-muted);margin-top:0.25rem;font-size:0.85rem;margin-bottom:2rem">
+    Họp Operations 04/04/2026 — 7 Quyết Định Cốt Lõi
+  </p>
+
+  <!-- Decision Summary -->
+  <div class="card card-glow" style="margin-bottom:2rem">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;font-size:0.85rem">
+      <div><span style="color:var(--danger);font-weight:600">🔒 CK:</span> Không tạo phiếu tự do</div>
+      <div><span style="color:var(--warning);font-weight:600">✋ TM:</span> Xác nhận 2 bước bắt buộc</div>
+      <div><span style="color:var(--info);font-weight:600">📊 Phải thu:</span> Deploy GSale trước 07/04</div>
+      <div><span style="color:var(--success);font-weight:600">🚚 COD:</span> Vận hành chịu trách nhiệm</div>
+      <div><span style="color:var(--accent);font-weight:600">📦 Sàn:</span> Phiếu thu = dự kiến, cần confirm</div>
+      <div><span style="color:var(--text-secondary);font-weight:600">🤖 OBS Đệ:</span> Team OPD tham gia</div>
+    </div>
+  </div>
+
+  <!-- Decision List -->
+  <h2 class="section-header">📋 Chi Tiết 7 Quyết Định</h2>
+
+  <!-- D-001 -->
+  <div class="card" style="margin-bottom:1rem;border-left:3px solid var(--danger)">
+    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem">
+      <span class="decision-tag" style="font-size:0.85rem">D-001</span>
+      <strong style="flex:1">Xây hệ thống đối soát ngân hàng — không tạo phiếu CK tự do</strong>
+      <span class="badge badge-success">✅ Chốt</span>
+    </div>
+    <div style="font-size:0.85rem;color:var(--text-secondary)">
+      Phiếu thu chuyển khoản (CK) bắt buộc phải gắn với giao dịch ngân hàng thực tế. Không cho phép tạo phiếu CK tự do nữa. Đây là fix trực tiếp lỗ hổng dẫn đến gian lận tại NCV.
+    </div>
+    <div style="font-size:0.85rem;color:var(--text-muted);margin-top:0.5rem">
+      <strong>Impact:</strong> Chặn 100% phiếu CK giả. Nhân viên phải "bốc giao dịch" từ danh sách giao dịch NH verified.
+    </div>
+    <div style="font-size:0.75rem;color:var(--text-muted);margin-top:0.5rem;display:flex;gap:1rem">
+      <span>📅 04/04/2026</span>
+      <span>👤 NTA7 (CEO)</span>
+      <span>🔗 AI-002</span>
+    </div>
+  </div>
+
+  <!-- D-002 -->
+  <div class="card" style="margin-bottom:1rem;border-left:3px solid var(--warning)">
+    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem">
+      <span class="decision-tag" style="font-size:0.85rem">D-002</span>
+      <strong style="flex:1">Xác nhận 2 bước tiền mặt + cờ trạng thái</strong>
+      <span class="badge badge-success">✅ Chốt</span>
+    </div>
+    <div style="font-size:0.85rem;color:var(--text-secondary)">
+      Phiếu thu tiền mặt phải qua 2 bước: (1) Nhân viên tạo phiếu DRAFT → (2) QLSR xác nhận CONFIRMED. Nhân viên không thể tự confirm. Có cờ trạng thái hiển thị trực quan (DRAFT/PENDING/CONFIRMED/REJECTED).
+    </div>
+    <div style="font-size:0.85rem;color:var(--text-muted);margin-top:0.5rem">
+      <strong>Impact:</strong> Ngăn chặn gian lận TM nội bộ. QLSR kiểm soát 100% phiếu thu tiền mặt.
+    </div>
+    <div style="font-size:0.75rem;color:var(--text-muted);margin-top:0.5rem;display:flex;gap:1rem">
+      <span>📅 04/04/2026</span>
+      <span>👤 NTA7 (CEO)</span>
+      <span>🔗 AI-004</span>
+    </div>
+  </div>
+
+  <!-- D-003 -->
+  <div class="card" style="margin-bottom:1rem;border-left:3px solid var(--info)">
+    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem">
+      <span class="decision-tag" style="font-size:0.85rem">D-003</span>
+      <strong style="flex:1">Deploy màn hình phải thu GSale trước 07/04</strong>
+      <span class="badge badge-success">✅ Chốt</span>
+    </div>
+    <div style="font-size:0.85rem;color:var(--text-secondary)">
+      Ưu tiên số 1: deploy màn hình "Phải Thu" trong GSale để QLSR và Kế toán có visibility real-time về outstanding receivables. Hiển thị theo 7 luồng thanh toán, filter theo showroom/ngày/phương thức.
+    </div>
+    <div style="font-size:0.85rem;color:var(--text-muted);margin-top:0.5rem">
+      <strong>Impact:</strong> QLSR biết ngay đơn nào còn thiếu tiền. Không cần export thủ công nữa.
+    </div>
+    <div style="font-size:0.75rem;color:var(--text-muted);margin-top:0.5rem;display:flex;gap:1rem">
+      <span>📅 04/04/2026</span>
+      <span>👤 NTA7 (CEO)</span>
+      <span>🔗 AI-001</span>
+    </div>
+  </div>
+
+  <!-- D-004 -->
+  <div class="card" style="margin-bottom:1rem;border-left:3px solid var(--success)">
+    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem">
+      <span class="decision-tag" style="font-size:0.85rem">D-004</span>
+      <strong style="flex:1">Vận hành chịu trách nhiệm phải thu kể cả COD</strong>
+      <span class="badge badge-success">✅ Chốt</span>
+    </div>
+    <div style="font-size:0.85rem;color:var(--text-secondary)">
+      OPD/QLSR (không phải Kế toán) chịu trách nhiệm theo dõi và đối soát COD hàng ngày. Kế toán chỉ approve và ghi nhận vào MISA. Chuyển giao chính thức sau khi pipeline COD ổn định.
+    </div>
+    <div style="font-size:0.75rem;color:var(--text-muted);margin-top:0.5rem;display:flex;gap:1rem">
+      <span>📅 04/04/2026</span>
+      <span>👤 NTA7 (CEO)</span>
+      <span>🔗 AI-008, AI-009</span>
+    </div>
+  </div>
+
+  <!-- D-005 -->
+  <div class="card" style="margin-bottom:1rem;border-left:3px solid var(--accent)">
+    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem">
+      <span class="decision-tag" style="font-size:0.85rem">D-005</span>
+      <strong style="flex:1">Build pipeline nhận file quyết toán từ đối tác</strong>
+      <span class="badge badge-success">✅ Chốt</span>
+    </div>
+    <div style="font-size:0.85rem;color:var(--text-secondary)">
+      Xây pipeline tự động đối soát sao kê từ HD Saison, GHN, Shopee, TikTok. Không còn đối soát thủ công. Auto-match và alert khi có chênh lệch.
+    </div>
+    <div style="font-size:0.75rem;color:var(--text-muted);margin-top:0.5rem;display:flex;gap:1rem">
+      <span>📅 04/04/2026</span>
+      <span>👤 NTA7 (CEO)</span>
+      <span>🔗 AI-007, AI-008, AI-010</span>
+    </div>
+  </div>
+
+  <!-- D-006 -->
+  <div class="card" style="margin-bottom:1rem;border-left:3px solid var(--warning)">
+    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem">
+      <span class="decision-tag" style="font-size:0.85rem">D-006</span>
+      <strong style="flex:1">Phiếu thu đơn sàn = dự kiến, cần xác nhận thực thu</strong>
+      <span class="badge badge-success">✅ Chốt</span>
+    </div>
+    <div style="font-size:0.85rem;color:var(--text-secondary)">
+      Phiếu thu từ đơn sàn (Shopee, TikTok...) chỉ là "dự kiến" cho đến khi tiền thực sự về tài khoản GEARVN. Cần pipeline 3 chiều xác nhận: đơn sàn ↔ sao kê sàn ↔ ngân hàng.
+    </div>
+    <div style="font-size:0.75rem;color:var(--text-muted);margin-top:0.5rem;display:flex;gap:1rem">
+      <span>📅 04/04/2026</span>
+      <span>👤 NTA7 (CEO)</span>
+      <span>🔗 AI-010</span>
+    </div>
+  </div>
+
+  <!-- D-007 -->
+  <div class="card" style="margin-bottom:1rem;border-left:3px solid var(--text-muted)">
+    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem">
+      <span class="decision-tag" style="font-size:0.85rem">D-007</span>
+      <strong style="flex:1">Team OPD tham gia OBS Đệ</strong>
+      <span class="badge badge-success">✅ Chốt</span>
+    </div>
+    <div style="font-size:0.85rem;color:var(--text-secondary)">
+      Toàn bộ team OPD, QLSR, Kế toán CS sẽ được onboard vào hệ thống OBS Đệ. Training bắt buộc, phân quyền theo role. Go-live sau khi pipeline đối soát ổn định.
+    </div>
+    <div style="font-size:0.75rem;color:var(--text-muted);margin-top:0.5rem;display:flex;gap:1rem">
+      <span>📅 04/04/2026</span>
+      <span>👤 NTA7 (CEO)</span>
+      <span>🔗 AI-011</span>
+    </div>
+  </div>
+
+  <div style="margin-bottom:3rem"></div>
+</div>
+
+<script src="../_shared/nav.js"></script>
+</body>
+</html>

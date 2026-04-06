@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đối soát Thu tiền — Team</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class'}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../_shared/theme.css">
+</head>
+<body class="dark">
+
+<script>
+window.DASHBOARD_CONFIG = {
+  name: 'Đối soát Thu tiền',
+  subtitle: 'Team',
+  emoji: '💰',
+  accent: '#ef4444',
+  pages: [
+    { href: 'index.html', icon: '🏠', label: 'Tổng Quan' },
+    { href: 'tasks.html', icon: '📋', label: 'Tasks' },
+    { href: 'milestones.html', icon: '🎯', label: 'Milestones' },
+    { href: 'decisions.html', icon: '⚡', label: 'Quyết Định' },
+    { href: 'team.html', icon: '👥', label: 'Team' }
+  ]
+};
+</script>
+<div id="topnav"></div>
+<div id="bottomnav"></div>
+
+<div class="container" style="padding-top:2rem">
+  <h1 class="gradient-text" style="font-size:2rem;font-weight:800;text-align:center">Team Directory</h1>
+  <p style="text-align:center;color:var(--text-muted);margin-top:0.25rem;font-size:0.85rem;margin-bottom:2rem">
+    Group OPD Telegram · 12 thành viên
+  </p>
+
+  <!-- Core Team -->
+  <h2 class="section-header">⭐ Core Team</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-bottom:2rem">
+
+    <div class="card" style="border-left:3px solid var(--danger)">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem">
+        <div style="width:40px;height:40px;border-radius:50%;background:var(--danger);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.85rem">CEO</div>
+        <div>
+          <div style="font-weight:700">NTA7</div>
+          <div style="font-size:0.75rem;color:var(--text-muted)">@gvnnta7 · CEO / Project Owner</div>
+        </div>
+      </div>
+      <div style="font-size:0.8rem;color:var(--text-secondary)">Accountable toàn bộ dự án. Approve quyết định, escalation cuối cùng.</div>
+      <div style="margin-top:0.5rem;display:flex;flex-wrap:wrap;gap:0.25rem">
+        <span class="badge badge-danger" style="font-size:0.65rem">AI-012 R</span>
+        <span class="badge badge-muted" style="font-size:0.65rem">All tasks A</span>
+      </div>
+    </div>
+
+    <div class="card" style="border-left:3px solid var(--info)">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem">
+        <div style="width:40px;height:40px;border-radius:50%;background:var(--info);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.85rem">TL</div>
+        <div>
+          <div style="font-weight:700">Nam</div>
+          <div style="font-size:0.75rem;color:var(--text-muted)">@namnguyen93 · Tech Lead ERP</div>
+        </div>
+      </div>
+      <div style="font-size:0.8rem;color:var(--text-secondary)">Responsible 6/12 tasks. Build pipeline, deploy features, viết scripts.</div>
+      <div style="margin-top:0.5rem;display:flex;flex-wrap:wrap;gap:0.25rem">
+        <span class="badge badge-danger" style="font-size:0.65rem">AI-001</span>
+        <span class="badge badge-danger" style="font-size:0.65rem">AI-002</span>
+        <span class="badge badge-danger" style="font-size:0.65rem">AI-004</span>
+        <span class="badge badge-info" style="font-size:0.65rem">AI-005</span>
+        <span class="badge badge-info" style="font-size:0.65rem">AI-006</span>
+        <span class="badge badge-info" style="font-size:0.65rem">AI-007</span>
+        <span class="badge badge-info" style="font-size:0.65rem">AI-008</span>
+        <span class="badge badge-info" style="font-size:0.65rem">AI-010</span>
+        <span class="badge badge-success" style="font-size:0.65rem">AI-011</span>
+      </div>
+      <div style="margin-top:0.5rem">
+        <span class="badge badge-warning" style="font-size:0.7rem">⚠️ BOTTLENECK — 6 tasks R</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- QLSR Team -->
+  <h2 class="section-header">🏪 QLSR / Store Managers</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-bottom:2rem">
+
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem">
+        <div style="width:40px;height:40px;border-radius:50%;background:var(--bg-secondary);display:flex;align-items:center;justify-content:center;font-size:1rem">🏪</div>
+        <div>
+          <div style="font-weight:700">Tài</div>
+          <div style="font-size:0.75rem;color:var(--text-muted)">@TalentVN @tatuanvn · SM NCV</div>
+        </div>
+      </div>
+      <div style="font-size:0.8rem;color:var(--text-secondary)">Phát hiện vấn đề gốc. UAT chính cho P1. Cung cấp data POS NCV.</div>
+      <div style="margin-top:0.5rem;display:flex;flex-wrap:wrap;gap:0.25rem">
+        <span class="badge badge-info" style="font-size:0.65rem">AI-005 R</span>
+        <span class="badge badge-muted" style="font-size:0.65rem">AI-002 UAT</span>
+        <span class="badge badge-muted" style="font-size:0.65rem">AI-008 C</span>
+        <span class="badge badge-muted" style="font-size:0.65rem">AI-009 C</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem">
+        <div style="width:40px;height:40px;border-radius:50%;background:var(--bg-secondary);display:flex;align-items:center;justify-content:center;font-size:1rem">🏪</div>
+        <div>
+          <div style="font-weight:700">Hoàng</div>
+          <div style="font-size:0.75rem;color:var(--text-muted)">@hoangnm04 · QLSR HHT</div>
+        </div>
+      </div>
+      <div style="font-size:0.8rem;color:var(--text-secondary)">UAT + verify gap POS showroom HHT.</div>
+      <div style="margin-top:0.5rem;display:flex;flex-wrap:wrap;gap:0.25rem">
+        <span class="badge badge-muted" style="font-size:0.65rem">AI-005 C</span>
+        <span class="badge badge-muted" style="font-size:0.65rem">AI-008 C</span>
+        <span class="badge badge-muted" style="font-size:0.65rem">AI-009 C</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem">
+        <div style="width:40px;height:40px;border-radius:50%;background:var(--bg-secondary);display:flex;align-items:center;justify-content:center;font-size:1rem">🏪</div>
+        <div>
+          <div style="font-weight:700">Khôi</div>
+          <div style="font-size:0.75rem;color:var(--text-muted)">@ngockhoi2808 · SM KVC</div>
+        </div>
+      </div>
+      <div style="font-size:0.8rem;color:var(--text-secondary)">UAT + verify POS showroom KVC.</div>
+      <div style="margin-top:0.5rem;display:flex;flex-wrap:wrap;gap:0.25rem">
+        <span class="badge badge-muted" style="font-size:0.65rem">AI-005 C</span>
+        <span class="badge badge-muted" style="font-size:0.65rem">AI-009 C</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem">
+        <div style="width:40px;height:40px;border-radius:50%;background:var(--bg-secondary);display:flex;align-items:center;justify-content:center;font-size:1rem">🏪</div>
+        <div>
+          <div style="font-weight:700">Quang Tôn</div>
+          <div style="font-size:0.75rem;color:var(--text-muted)">SM TBT</div>
+        </div>
+      </div>
+      <div style="font-size:0.8rem;color:var(--text-secondary)">UAT + pilot showroom TBT.</div>
+      <div style="margin-top:0.5rem;display:flex;flex-wrap:wrap;gap:0.25rem">
+        <span class="badge badge-muted" style="font-size:0.65rem">AI-009 C</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem">
+        <div style="width:40px;height:40px;border-radius:50%;background:var(--bg-secondary);display:flex;align-items:center;justify-content:center;font-size:1rem">🏪</div>
+        <div>
+          <div style="font-weight:700">Trịnh Nam</div>
+          <div style="font-size:0.75rem;color:var(--text-muted)">@namnt_gearvn · SM Thái Hà</div>
+        </div>
+      </div>
+      <div style="font-size:0.8rem;color:var(--text-secondary)">UAT + pilot showroom Thái Hà.</div>
+      <div style="margin-top:0.5rem;display:flex;flex-wrap:wrap;gap:0.25rem">
+        <span class="badge badge-muted" style="font-size:0.65rem">AI-009 C</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem">
+        <div style="width:40px;height:40px;border-radius:50%;background:var(--bg-secondary);display:flex;align-items:center;justify-content:center;font-size:1rem">🏪</div>
+        <div>
+          <div style="font-weight:700">NamTH33</div>
+          <div style="font-size:0.75rem;color:var(--text-muted)">@NamTH33 · SM Thái Hà HN</div>
+        </div>
+      </div>
+      <div style="font-size:0.8rem;color:var(--text-secondary)">UAT + pilot showroom Thái Hà HN.</div>
+      <div style="margin-top:0.5rem;display:flex;flex-wrap:wrap;gap:0.25rem">
+        <span class="badge badge-muted" style="font-size:0.65rem">AI-009 C</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Operations & Online -->
+  <h2 class="section-header">⚙️ Operations & Online</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-bottom:2rem">
+
+    <div class="card" style="border-left:3px solid var(--warning)">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem">
+        <div style="width:40px;height:40px;border-radius:50%;background:var(--warning);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.75rem;color:#000">OPS</div>
+        <div>
+          <div style="font-weight:700">Hải</div>
+          <div style="font-size:0.75rem;color:var(--text-muted)">@Haint1995 · QL Kho SR HHT</div>
+        </div>
+      </div>
+      <div style="font-size:0.8rem;color:var(--text-secondary)">Tiếp nhận chính COD từ Kế toán. Soạn SOP, liên hệ VC, training QLSR.</div>
+      <div style="margin-top:0.5rem;display:flex;flex-wrap:wrap;gap:0.25rem">
+        <span class="badge badge-info" style="font-size:0.65rem">AI-008 R</span>
+        <span class="badge badge-success" style="font-size:0.65rem">AI-009 R</span>
+        <span class="badge badge-muted" style="font-size:0.65rem">AI-012 C</span>
+      </div>
+    </div>
+
+    <div class="card" style="border-left:3px solid var(--accent)">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem">
+        <div style="width:40px;height:40px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.7rem">ECOM</div>
+        <div>
+          <div style="font-weight:700">Thắng</div>
+          <div style="font-size:0.75rem;color:var(--text-muted)">@Thangnc24 · ECOM / Sàn</div>
+        </div>
+      </div>
+      <div style="font-size:0.8rem;color:var(--text-secondary)">Data Seller Center các sàn. Verify phí commission theo hợp đồng.</div>
+      <div style="margin-top:0.5rem;display:flex;flex-wrap:wrap;gap:0.25rem">
+        <span class="badge badge-info" style="font-size:0.65rem">AI-010 R</span>
+      </div>
+    </div>
+
+    <div class="card" style="border-left:3px solid var(--success)">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem">
+        <div style="width:40px;height:40px;border-radius:50%;background:var(--success);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:0.7rem">KDO</div>
+        <div>
+          <div style="font-weight:700">Phương Anh</div>
+          <div style="font-size:0.75rem;color:var(--text-muted)">@fufudinosaur · QL KD Online</div>
+        </div>
+      </div>
+      <div style="font-size:0.8rem;color:var(--text-secondary)">Verify đơn sàn online, confirm doanh thu net. Hỗ trợ pipeline HDS.</div>
+      <div style="margin-top:0.5rem;display:flex;flex-wrap:wrap;gap:0.25rem">
+        <span class="badge badge-info" style="font-size:0.65rem">AI-010 R</span>
+        <span class="badge badge-muted" style="font-size:0.65rem">AI-007 C</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem">
+        <div style="width:40px;height:40px;border-radius:50%;background:var(--bg-secondary);display:flex;align-items:center;justify-content:center;font-size:1rem">👤</div>
+        <div>
+          <div style="font-weight:700">Kim Ngọc</div>
+          <div style="font-size:0.75rem;color:var(--text-muted)">Nhân sự SR Thái Hà</div>
+        </div>
+      </div>
+      <div style="font-size:0.8rem;color:var(--text-secondary)">Điều phối training, soạn user guide OBS Đệ.</div>
+      <div style="margin-top:0.5rem;display:flex;flex-wrap:wrap;gap:0.25rem">
+        <span class="badge badge-success" style="font-size:0.65rem">AI-011 R</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RACI Summary Table -->
+  <h2 class="section-header">📊 RACI Matrix Tổng Hợp</h2>
+  <div class="card table-wrap" style="margin-bottom:2rem;padding:0.5rem">
+    <table>
+      <thead>
+        <tr>
+          <th>Member</th>
+          <th>Vai trò</th>
+          <th>Tasks R</th>
+          <th>Tasks C</th>
+          <th>Workload</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Nam</strong></td>
+          <td>Tech Lead</td>
+          <td><span style="color:var(--danger);font-weight:700">6</span></td>
+          <td>0</td>
+          <td><span class="badge badge-danger">⚠️ HIGH</span></td>
+        </tr>
+        <tr>
+          <td><strong>Hải</strong></td>
+          <td>QL Kho</td>
+          <td>2</td>
+          <td>1</td>
+          <td><span class="badge badge-warning">MEDIUM</span></td>
+        </tr>
+        <tr>
+          <td><strong>Thắng</strong></td>
+          <td>ECOM</td>
+          <td>1</td>
+          <td>0</td>
+          <td><span class="badge badge-success">LOW</span></td>
+        </tr>
+        <tr>
+          <td><strong>Phương Anh</strong></td>
+          <td>QL KD Online</td>
+          <td>1</td>
+          <td>1</td>
+          <td><span class="badge badge-success">LOW</span></td>
+        </tr>
+        <tr>
+          <td><strong>Tài</strong></td>
+          <td>SM NCV</td>
+          <td>1</td>
+          <td>2</td>
+          <td><span class="badge badge-warning">MEDIUM</span></td>
+        </tr>
+        <tr>
+          <td><strong>Kim Ngọc</strong></td>
+          <td>Nhân sự</td>
+          <td>1</td>
+          <td>0</td>
+          <td><span class="badge badge-success">LOW</span></td>
+        </tr>
+        <tr>
+          <td><strong>Hoàng</strong></td>
+          <td>SM HHT</td>
+          <td>0</td>
+          <td>3</td>
+          <td><span class="badge badge-success">LOW</span></td>
+        </tr>
+        <tr>
+          <td><strong>Khôi</strong></td>
+          <td>SM KVC</td>
+          <td>0</td>
+          <td>2</td>
+          <td><span class="badge badge-success">LOW</span></td>
+        </tr>
+        <tr>
+          <td><strong>Q.Tôn, T.Nam, NamTH33</strong></td>
+          <td>SM</td>
+          <td>0</td>
+          <td>1 each</td>
+          <td><span class="badge badge-success">LOW</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- External Dependencies -->
+  <h2 class="section-header">🔗 Cần Input Ngoài Group OPD</h2>
+  <div class="card" style="margin-bottom:2rem">
+    <div style="font-size:0.85rem;line-height:2">
+      <div style="display:flex;gap:0.5rem;align-items:center">
+        <span class="badge badge-danger" style="min-width:90px;justify-content:center">Kế toán trưởng</span>
+        <span style="color:var(--text-secondary)">Confirm business rules AI-002 + AI-004, phê duyệt mã chuẩn chi AI-006, ký bàn giao AI-009</span>
+      </div>
+      <div style="display:flex;gap:0.5rem;align-items:center">
+        <span class="badge badge-warning" style="min-width:90px;justify-content:center">Kế toán CS</span>
+        <span style="color:var(--text-secondary)">Export MISA, cung cấp sao kê NH, verify pipeline results</span>
+      </div>
+      <div style="display:flex;gap:0.5rem;align-items:center">
+        <span class="badge badge-info" style="min-width:90px;justify-content:center">Pháp chế</span>
+        <span style="color:var(--text-secondary)">Soạn SOP pháp lý AI-012, template hồ sơ, contact list CA</span>
+      </div>
+      <div style="display:flex;gap:0.5rem;align-items:center">
+        <span class="badge badge-muted" style="min-width:90px;justify-content:center">Đối tác</span>
+        <span style="color:var(--text-secondary)">API/SFTP từ HD Saison, GHN, GHTK, Viettel Post, Shopee, Lazada</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:3rem"></div>
+</div>
+
+<script src="../_shared/nav.js"></script>
+</body>
+</html>

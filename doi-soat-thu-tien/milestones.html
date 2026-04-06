@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đối soát Thu tiền — Milestones</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class'}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../_shared/theme.css">
+</head>
+<body class="dark">
+
+<script>
+window.DASHBOARD_CONFIG = {
+  name: 'Đối soát Thu tiền',
+  subtitle: 'Milestones',
+  emoji: '💰',
+  accent: '#ef4444',
+  pages: [
+    { href: 'index.html', icon: '🏠', label: 'Tổng Quan' },
+    { href: 'tasks.html', icon: '📋', label: 'Tasks' },
+    { href: 'milestones.html', icon: '🎯', label: 'Milestones' },
+    { href: 'decisions.html', icon: '⚡', label: 'Quyết Định' },
+    { href: 'team.html', icon: '👥', label: 'Team' }
+  ]
+};
+</script>
+<div id="topnav"></div>
+<div id="bottomnav"></div>
+
+<div class="container" style="padding-top:2rem">
+  <h1 class="gradient-text" style="font-size:2rem;font-weight:800;text-align:center">Milestones & Roadmap</h1>
+  <p style="text-align:center;color:var(--text-muted);margin-top:0.25rem;font-size:0.85rem;margin-bottom:2rem">
+    3 Milestones · 12 Action Items · Target 25/05/2026
+  </p>
+
+  <div style="max-width:800px;margin:0 auto;padding-left:1rem">
+
+    <!-- M1 — Khẩn Cấp -->
+    <div class="milestone-item at-risk">
+      <div style="flex:1">
+        <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap">
+          <span style="font-size:2rem;font-weight:800;color:var(--danger)">M1</span>
+          <strong style="font-size:1.1rem">Khẩn Cấp — Fix Lỗ Hổng & Visibility</strong>
+          <span class="badge badge-danger">🔴 ĐANG LÀM</span>
+        </div>
+        <div style="font-size:0.85rem;color:var(--text-muted);margin-top:0.25rem">05/04 → 14/04/2026 (10 ngày)</div>
+        <div class="card" style="margin-top:0.75rem;padding:1rem;border-color:var(--danger)">
+          <div style="font-size:0.85rem;color:var(--text-secondary)">
+            <strong>Gate:</strong> 4 tasks P1 hoàn thành, QLSR UAT pass, lỗ hổng CK được chặn
+          </div>
+          <div style="font-size:0.85rem;color:var(--danger);margin-top:0.25rem">
+            🔴 AI-001 deploy deadline HÔM NAY 07/04 — Nam đang làm
+          </div>
+          <div style="margin-top:0.75rem">
+            <div class="progress-bar"><div class="progress-fill" style="width:25%;background:var(--danger)"></div></div>
+            <div style="font-size:0.75rem;color:var(--text-muted);margin-top:0.25rem">25% — 1/4 tasks đang deploy</div>
+          </div>
+          <!-- Tasks in this milestone -->
+          <div style="margin-top:0.75rem;font-size:0.85rem">
+            <div style="padding:0.35rem 0;border-bottom:1px solid var(--border);display:flex;gap:0.5rem;align-items:center">
+              <span class="badge badge-warning" style="min-width:55px;justify-content:center">🔧</span>
+              <strong>AI-001</strong> Deploy màn hình phải thu GSale
+              <span style="margin-left:auto;font-size:0.75rem;color:var(--danger)">DL 07/04</span>
+            </div>
+            <div style="padding:0.35rem 0;border-bottom:1px solid var(--border);display:flex;gap:0.5rem;align-items:center">
+              <span class="badge badge-muted" style="min-width:55px;justify-content:center">⏳</span>
+              <strong>AI-002</strong> Rule bốc giao dịch cho phiếu CK
+              <span style="margin-left:auto;font-size:0.75rem;color:var(--text-muted)">DL 10/04</span>
+            </div>
+            <div style="padding:0.35rem 0;border-bottom:1px solid var(--border);display:flex;gap:0.5rem;align-items:center">
+              <span class="badge badge-muted" style="min-width:55px;justify-content:center">⏳</span>
+              <strong>AI-003</strong> Clear phiếu CK cũ
+              <span style="margin-left:auto;font-size:0.75rem;color:var(--text-muted)">DL 10/04</span>
+            </div>
+            <div style="padding:0.35rem 0;display:flex;gap:0.5rem;align-items:center">
+              <span class="badge badge-muted" style="min-width:55px;justify-content:center">⏳</span>
+              <strong>AI-004</strong> Xác nhận TM 2 bước + cờ trạng thái
+              <span style="margin-left:auto;font-size:0.75rem;color:var(--text-muted)">DL 14/04</span>
+            </div>
+          </div>
+          <!-- Blockers -->
+          <div style="margin-top:0.75rem;padding:0.5rem;background:rgba(239,68,68,0.08);border-radius:8px">
+            <div style="font-size:0.8rem;color:var(--danger);font-weight:600">Blockers & Risks:</div>
+            <ul style="font-size:0.8rem;color:var(--text-secondary);margin-top:0.25rem;padding-left:1.25rem">
+              <li>Kế toán trưởng cần confirm business rules AI-002 + AI-004 trước 08/04</li>
+              <li>Cung cấp sao kê NH cho AI-003 retroactive link</li>
+              <li>Xác nhận phân quyền role GSale (chặn AI-004)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- M2 — Chuẩn Hóa -->
+    <div class="milestone-item">
+      <div style="flex:1">
+        <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap">
+          <span style="font-size:2rem;font-weight:800;color:var(--info)">M2</span>
+          <strong style="font-size:1.1rem">Chuẩn Hóa — Pipeline Đối Soát Tự Động</strong>
+          <span class="badge badge-muted">⏳ PENDING</span>
+        </div>
+        <div style="font-size:0.85rem;color:var(--text-muted);margin-top:0.25rem">14/04 → 11/05/2026 (4 tuần — Sprint 1 & 2)</div>
+        <div class="card" style="margin-top:0.75rem;padding:1rem">
+          <div style="font-size:0.85rem;color:var(--text-secondary)">
+            <strong>Gate:</strong> Pipeline HDS + COD + Sàn chạy auto, match rate ≥ 95%, POS/MISA gap analysis done, mã chuẩn chi 100%
+          </div>
+          <div style="margin-top:0.75rem">
+            <div class="progress-bar"><div class="progress-fill" style="width:0%;background:var(--info)"></div></div>
+            <div style="font-size:0.75rem;color:var(--text-muted);margin-top:0.25rem">0% — chờ P1 hoàn thành</div>
+          </div>
+          <div style="margin-top:0.75rem;font-size:0.85rem">
+            <div style="font-weight:600;color:var(--text-secondary);margin-bottom:0.25rem">Sprint 1 (14-27/04) — 3 tasks song song:</div>
+            <div style="padding:0.25rem 0;display:flex;gap:0.5rem;color:var(--text-muted);font-size:0.8rem">
+              <strong>AI-005</strong> POS/MISA gap analysis · <strong>AI-007</strong> Pipeline HDS · <strong>AI-010</strong> Đối soát sàn 3C
+            </div>
+            <div style="font-weight:600;color:var(--text-secondary);margin-top:0.5rem;margin-bottom:0.25rem">Sprint 2 (28/04-11/05) — 2 tasks:</div>
+            <div style="padding:0.25rem 0;display:flex;gap:0.5rem;color:var(--text-muted);font-size:0.8rem">
+              <strong>AI-006</strong> Mã chuẩn chi POS (sau AI-005) · <strong>AI-008</strong> Pipeline COD
+            </div>
+          </div>
+          <div style="margin-top:0.75rem;padding:0.5rem;background:rgba(234,179,8,0.08);border-radius:8px">
+            <div style="font-size:0.8rem;color:var(--warning);font-weight:600">Risks:</div>
+            <ul style="font-size:0.8rem;color:var(--text-secondary);margin-top:0.25rem;padding-left:1.25rem">
+              <li>Nam là bottleneck (5/5 tasks cần Nam) — cần thêm Data Engineer</li>
+              <li>API đối tác (HDS, GHN, Sàn) chưa chắc sẵn sàng kịp</li>
+              <li>Nghỉ lễ 30/4-1/5 mất 2 ngày Sprint 2</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- M3 — Bàn Giao -->
+    <div class="milestone-item">
+      <div style="flex:1">
+        <div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap">
+          <span style="font-size:2rem;font-weight:800;color:var(--success)">M3</span>
+          <strong style="font-size:1.1rem">Bàn Giao & Vận Hành Tự Chủ</strong>
+          <span class="badge badge-muted">⏳ PENDING</span>
+        </div>
+        <div style="font-size:0.85rem;color:var(--text-muted);margin-top:0.25rem">12/05 → 25/05/2026 (2 tuần — Sprint 3)</div>
+        <div class="card" style="margin-top:0.75rem;padding:1rem">
+          <div style="font-size:0.85rem;color:var(--text-secondary)">
+            <strong>Gate:</strong> OPD tự vận hành COD 2 tuần không cần KT hỗ trợ, OBS Đệ 100% onboarded, SOP pháp lý CEO approved
+          </div>
+          <div style="margin-top:0.75rem">
+            <div class="progress-bar"><div class="progress-fill" style="width:0%;background:var(--success)"></div></div>
+            <div style="font-size:0.75rem;color:var(--text-muted);margin-top:0.25rem">0% — chờ M2</div>
+          </div>
+          <div style="margin-top:0.75rem;font-size:0.85rem">
+            <div style="padding:0.25rem 0;display:flex;gap:0.5rem;color:var(--text-muted);font-size:0.8rem;flex-wrap:wrap">
+              <strong>AI-009</strong> Bàn giao COD → OPD · <strong>AI-011</strong> Onboarding OBS Đệ · <strong>AI-012</strong> SOP pháp lý
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Timeline Visual -->
+  <h2 class="section-header" style="margin-top:2rem">📅 Timeline Tổng Quan</h2>
+  <div class="card" style="margin-bottom:2rem;overflow-x:auto">
+    <div style="min-width:600px;font-size:0.8rem">
+      <div style="display:grid;grid-template-columns:repeat(8,1fr);gap:0;border-bottom:1px solid var(--border);padding-bottom:0.5rem;margin-bottom:0.5rem">
+        <div style="color:var(--text-muted);text-align:center;font-weight:600">05/04</div>
+        <div style="color:var(--text-muted);text-align:center;font-weight:600">14/04</div>
+        <div style="color:var(--text-muted);text-align:center;font-weight:600">21/04</div>
+        <div style="color:var(--text-muted);text-align:center;font-weight:600">28/04</div>
+        <div style="color:var(--text-muted);text-align:center;font-weight:600">05/05</div>
+        <div style="color:var(--text-muted);text-align:center;font-weight:600">12/05</div>
+        <div style="color:var(--text-muted);text-align:center;font-weight:600">19/05</div>
+        <div style="color:var(--text-muted);text-align:center;font-weight:600">25/05</div>
+      </div>
+      <!-- P1 bar -->
+      <div style="display:flex;align-items:center;margin-bottom:0.5rem">
+        <div style="width:12.5%;padding:0.35rem;background:var(--danger);border-radius:4px;text-align:center;color:white;font-weight:700;font-size:0.7rem">
+          M1 P1
+        </div>
+      </div>
+      <!-- Sprint 1 bar -->
+      <div style="display:flex;align-items:center;margin-bottom:0.5rem">
+        <div style="width:12.5%"></div>
+        <div style="width:25%;padding:0.35rem;background:var(--info);border-radius:4px;text-align:center;color:white;font-weight:700;font-size:0.7rem">
+          M2 Sprint 1
+        </div>
+      </div>
+      <!-- Sprint 2 bar -->
+      <div style="display:flex;align-items:center;margin-bottom:0.5rem">
+        <div style="width:37.5%"></div>
+        <div style="width:25%;padding:0.35rem;background:var(--info);border-radius:4px;text-align:center;color:white;font-weight:700;font-size:0.7rem">
+          M2 Sprint 2
+        </div>
+      </div>
+      <!-- Sprint 3 bar -->
+      <div style="display:flex;align-items:center;margin-bottom:0.25rem">
+        <div style="width:62.5%"></div>
+        <div style="width:25%;padding:0.35rem;background:var(--success);border-radius:4px;text-align:center;color:white;font-weight:700;font-size:0.7rem">
+          M3 Sprint 3
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:3rem"></div>
+</div>
+
+<script src="../_shared/nav.js"></script>
+</body>
+</html>

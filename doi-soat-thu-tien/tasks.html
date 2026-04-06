@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đối soát Thu tiền — Tasks</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class'}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../_shared/theme.css">
+</head>
+<body class="dark">
+
+<script>
+window.DASHBOARD_CONFIG = {
+  name: 'Đối soát Thu tiền',
+  subtitle: 'Task Board',
+  emoji: '💰',
+  accent: '#ef4444',
+  pages: [
+    { href: 'index.html', icon: '🏠', label: 'Tổng Quan' },
+    { href: 'tasks.html', icon: '📋', label: 'Tasks' },
+    { href: 'milestones.html', icon: '🎯', label: 'Milestones' },
+    { href: 'decisions.html', icon: '⚡', label: 'Quyết Định' },
+    { href: 'team.html', icon: '👥', label: 'Team' }
+  ]
+};
+</script>
+<div id="topnav"></div>
+<div id="bottomnav"></div>
+
+<div class="container" style="padding-top:2rem">
+  <h1 class="gradient-text" style="font-size:2rem;font-weight:800;text-align:center">Task Board</h1>
+  <p style="text-align:center;color:var(--text-muted);margin-top:0.25rem;font-size:0.85rem">
+    12 Action Items · AI-001 → AI-012 · Cập nhật 07/04/2026
+  </p>
+
+  <!-- Quick Stats -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:0.75rem;margin:1.5rem 0;max-width:700px;margin-left:auto;margin-right:auto">
+    <div class="stat-card"><div class="stat-value">12</div><div class="stat-label">Total</div></div>
+    <div class="stat-card"><div class="stat-value" style="color:var(--danger)">1</div><div class="stat-label">Đang Deploy</div></div>
+    <div class="stat-card"><div class="stat-value" style="color:var(--warning)">3</div><div class="stat-label">Chờ Spec</div></div>
+    <div class="stat-card"><div class="stat-value" style="color:var(--text-muted)">8</div><div class="stat-label">Pending P2/P3</div></div>
+  </div>
+
+  <!-- Overall Progress -->
+  <div class="card" style="margin-bottom:1.5rem">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem">
+      <strong>Overall Progress</strong>
+      <span style="color:var(--accent);font-weight:700">0/12 (0%)</span>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" style="width:4%;background:var(--danger)"></div></div>
+    <div style="display:flex;justify-content:space-between;font-size:0.75rem;color:var(--text-muted);margin-top:0.5rem">
+      <span>P1: 0/4 · AI-001 deploying</span>
+      <span>P2: 0/5 · starts 14/04</span>
+      <span>P3: 0/3 · starts 12/05</span>
+    </div>
+  </div>
+
+  <!-- Filters -->
+  <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.75rem">
+    <span style="font-size:0.8rem;color:var(--text-muted);padding-top:0.35rem">PRIORITY:</span>
+    <button class="filter-chip active" onclick="filterBy('priority','all')">All</button>
+    <button class="filter-chip" onclick="filterBy('priority','p1')">🔴 P1</button>
+    <button class="filter-chip" onclick="filterBy('priority','p2')">🔵 P2</button>
+    <button class="filter-chip" onclick="filterBy('priority','p3')">🟢 P3</button>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem">
+    <span style="font-size:0.8rem;color:var(--text-muted);padding-top:0.35rem">OWNER:</span>
+    <button class="filter-chip active" onclick="filterBy('owner','all')">All</button>
+    <button class="filter-chip" onclick="filterBy('owner','nam')">Nam</button>
+    <button class="filter-chip" onclick="filterBy('owner','ketoan')">Kế toán</button>
+    <button class="filter-chip" onclick="filterBy('owner','ops')">OPD/Ops</button>
+    <button class="filter-chip" onclick="filterBy('owner','thang')">Thắng</button>
+  </div>
+
+  <!-- === P1 — KHẨN CẤP === -->
+  <div class="task-group">
+    <h3 style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem">
+      <span>🔴 P1 — Khẩn Cấp (05-14/04)</span>
+      <span class="badge badge-danger">4 tasks</span>
+    </h3>
+    <div class="card" style="padding:0;overflow:hidden">
+
+      <div class="task-row" data-priority="p1" data-owner="nam" data-status="active">
+        <span class="task-id" style="color:var(--danger)">AI-001</span>
+        <span class="task-subject">
+          Deploy màn hình phải thu GSale
+          <div style="font-size:0.75rem;color:var(--text-muted);margin-top:2px">
+            Hiển thị outstanding receivables theo showroom, 7 luồng thanh toán, filter + export
+          </div>
+        </span>
+        <span class="badge badge-danger">P1</span>
+        <span class="badge badge-warning">🔧 Deploying</span>
+        <span style="font-size:0.7rem;color:var(--text-muted)">Nam · DL 07/04</span>
+      </div>
+
+      <div class="task-row" data-priority="p1" data-owner="nam" data-status="pending">
+        <span class="task-id" style="color:var(--danger)">AI-002</span>
+        <span class="task-subject">
+          Rule bốc giao dịch cho phiếu CK
+          <div style="font-size:0.75rem;color:var(--text-muted);margin-top:2px">
+            Phiếu CK bắt buộc gắn giao dịch NH thực · Chặn tạo phiếu CK giả · 6 business rules
+          </div>
+        </span>
+        <span class="badge badge-danger">P1</span>
+        <span class="badge badge-muted">⏳ Chờ spec</span>
+        <span style="font-size:0.7rem;color:var(--text-muted)">Nam + KT · DL 10/04</span>
+      </div>
+
+      <div class="task-row" data-priority="p1" data-owner="ketoan" data-status="pending">
+        <span class="task-id" style="color:var(--danger)">AI-003</span>
+        <span class="task-subject">
+          Clear phiếu CK cũ chưa có giao dịch tham chiếu
+          <div style="font-size:0.75rem;color:var(--text-muted);margin-top:2px">
+            Rà soát + phân loại phiếu CK legacy: VALID / SUSPICIOUS / FRAUD · Báo cáo CEO
+          </div>
+        </span>
+        <span class="badge badge-danger">P1</span>
+        <span class="badge badge-muted">⏳ Chờ spec</span>
+        <span style="font-size:0.7rem;color:var(--text-muted)">KT + Nam · DL 10/04</span>
+      </div>
+
+      <div class="task-row" data-priority="p1" data-owner="nam" data-status="pending">
+        <span class="task-id" style="color:var(--danger)">AI-004</span>
+        <span class="task-subject">
+          Xác nhận tiền mặt 2 bước + cờ trạng thái
+          <div style="font-size:0.75rem;color:var(--text-muted);margin-top:2px">
+            NV tạo → QLSR confirm · Cờ: DRAFT → PENDING → CONFIRMED · Alert timeout · 10 business rules
+          </div>
+        </span>
+        <span class="badge badge-danger">P1</span>
+        <span class="badge badge-muted">⏳ Chờ spec</span>
+        <span style="font-size:0.7rem;color:var(--text-muted)">Nam + Ops · DL 14/04</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- === P2 — CHUẨN HÓA === -->
+  <div class="task-group" style="margin-top:2rem">
+    <h3 style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem">
+      <span>🔵 P2 — Chuẩn Hóa Pipeline (14/04 → 11/05)</span>
+      <span class="badge badge-info">5 tasks</span>
+    </h3>
+    <div class="card" style="padding:0;overflow:hidden">
+
+      <div class="task-row" data-priority="p2" data-owner="nam" data-status="pending">
+        <span class="task-id" style="color:var(--info)">AI-005</span>
+        <span class="task-subject">
+          Kiểm tra & chuẩn hóa dữ liệu POS từ MISA
+          <div style="font-size:0.75rem;color:var(--text-muted);margin-top:2px">
+            Script so sánh POS vs MISA · Gap analysis 30 ngày · Match rate ≥ 95%
+          </div>
+        </span>
+        <span class="badge badge-info">P2</span>
+        <span class="badge badge-muted">⏳ Sprint 1</span>
+        <span style="font-size:0.7rem;color:var(--text-muted)">Nam + Tài · 14-27/04</span>
+      </div>
+
+      <div class="task-row" data-priority="p2" data-owner="ketoan" data-status="pending">
+        <span class="task-id" style="color:var(--info)">AI-006</span>
+        <span class="task-subject">
+          Bổ sung mã chuẩn chi vào phiếu POS
+          <div style="font-size:0.75rem;color:var(--text-muted);margin-top:2px">
+            Mapping loại GD → mã MISA · 100% phiếu có mã · Retroactive 3 tháng
+          </div>
+        </span>
+        <span class="badge badge-info">P2</span>
+        <span class="badge badge-muted">⏳ Sprint 2</span>
+        <span style="font-size:0.7rem;color:var(--text-muted)">KT trưởng + Nam · 28/04-11/05</span>
+      </div>
+
+      <div class="task-row" data-priority="p2" data-owner="nam" data-status="pending">
+        <span class="task-id" style="color:var(--info)">AI-007</span>
+        <span class="task-subject">
+          Pipeline đối soát HD Saison
+          <div style="font-size:0.75rem;color:var(--text-muted);margin-top:2px">
+            Auto-match giải ngân HDS ↔ đơn trả góp · Match rate ≥ 98% · Alert chênh lệch
+          </div>
+        </span>
+        <span class="badge badge-info">P2</span>
+        <span class="badge badge-muted">⏳ Sprint 1</span>
+        <span style="font-size:0.7rem;color:var(--text-muted)">Nam + P.Anh · 14-27/04</span>
+      </div>
+
+      <div class="task-row" data-priority="p2" data-owner="nam" data-status="pending">
+        <span class="task-id" style="color:var(--info)">AI-008</span>
+        <span class="task-subject">
+          Pipeline đối soát COD
+          <div style="font-size:0.75rem;color:var(--text-muted);margin-top:2px">
+            Match COD từ GHN/GHTK/VTP ↔ GSale ↔ Ngân hàng · Alert quá hạn 5 ngày
+          </div>
+        </span>
+        <span class="badge badge-info">P2</span>
+        <span class="badge badge-muted">⏳ Sprint 2</span>
+        <span style="font-size:0.7rem;color:var(--text-muted)">Nam + Hải · 28/04-11/05</span>
+      </div>
+
+      <div class="task-row" data-priority="p2" data-owner="thang" data-status="pending">
+        <span class="task-id" style="color:var(--info)">AI-010</span>
+        <span class="task-subject">
+          Đối soát 3 chiều đơn sàn TMĐT
+          <div style="font-size:0.75rem;color:var(--text-muted);margin-top:2px">
+            3-way: GSale ↔ Seller Center ↔ Ngân hàng · Shopee + Lazada · Phí commission verify
+          </div>
+        </span>
+        <span class="badge badge-info">P2</span>
+        <span class="badge badge-muted">⏳ Sprint 1</span>
+        <span style="font-size:0.7rem;color:var(--text-muted)">Nam + Thắng + P.Anh · 14-27/04</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- === P3 — BÀN GIAO === -->
+  <div class="task-group" style="margin-top:2rem;margin-bottom:2rem">
+    <h3 style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem">
+      <span>🟢 P3 — Bàn Giao & SOP (12-25/05)</span>
+      <span class="badge badge-success">3 tasks</span>
+    </h3>
+    <div class="card" style="padding:0;overflow:hidden">
+
+      <div class="task-row" data-priority="p3" data-owner="ops" data-status="pending">
+        <span class="task-id" style="color:var(--success)">AI-009</span>
+        <span class="task-subject">
+          Bàn giao quản lý COD sang OPD/QLSR
+          <div style="font-size:0.75rem;color:var(--text-muted);margin-top:2px">
+            SOP v2.0 · Shadow → Pilot → Handover · OPD tự vận hành 2 tuần
+          </div>
+        </span>
+        <span class="badge badge-success">P3</span>
+        <span class="badge badge-muted">⏳ Sprint 3</span>
+        <span style="font-size:0.7rem;color:var(--text-muted)">Hải + QLSR · 12-25/05</span>
+      </div>
+
+      <div class="task-row" data-priority="p3" data-owner="ops" data-status="pending">
+        <span class="task-id" style="color:var(--success)">AI-011</span>
+        <span class="task-subject">
+          Onboarding team vào OBS Đệ
+          <div style="font-size:0.75rem;color:var(--text-muted);margin-top:2px">
+            Tạo TK + phân quyền · Training 2 buổi · User guide VN · 100% team onboarded
+          </div>
+        </span>
+        <span class="badge badge-success">P3</span>
+        <span class="badge badge-muted">⏳ Sprint 3</span>
+        <span style="font-size:0.7rem;color:var(--text-muted)">Kim Ngọc + Nam · 12-25/05</span>
+      </div>
+
+      <div class="task-row" data-priority="p3" data-owner="ops" data-status="pending">
+        <span class="task-id" style="color:var(--success)">AI-012</span>
+        <span class="task-subject">
+          Quy trình xử lý tình huống pháp lý
+          <div style="font-size:0.75rem;color:var(--text-muted);margin-top:2px">
+            SOP phối hợp CA/KH · Contact list khẩn cấp · Template sao kê · Escalation matrix
+          </div>
+        </span>
+        <span class="badge badge-success">P3</span>
+        <span class="badge badge-muted">⏳ Sprint 3</span>
+        <span style="font-size:0.7rem;color:var(--text-muted)">NTA7 + Pháp chế · 12-25/05</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- === DEPENDENCY MAP === -->
+  <h2 class="section-header">🔗 Dependencies</h2>
+  <div class="card" style="margin-bottom:2rem">
+    <div style="font-size:0.85rem;color:var(--text-secondary);line-height:1.8">
+      <div><span class="decision-tag">AI-002</span> → <span class="decision-tag">AI-003</span> <span style="color:var(--text-muted)">Rule CK mới trước, rồi clear phiếu cũ</span></div>
+      <div><span class="decision-tag">AI-005</span> → <span class="decision-tag">AI-006</span> <span style="color:var(--text-muted)">Biết loại GD trước khi map mã chuẩn chi</span></div>
+      <div><span class="decision-tag">AI-008</span> → <span class="decision-tag">AI-009</span> <span style="color:var(--text-muted)">Pipeline COD stable trước khi bàn giao OPD</span></div>
+      <div><span class="decision-tag">AI-005~010</span> → <span class="decision-tag">AI-012</span> <span style="color:var(--text-muted)">Pipeline hoạt động trước khi làm SOP pháp lý</span></div>
+      <div style="margin-top:0.5rem;color:var(--text-muted);font-size:0.8rem">
+        Song song: AI-005 ‖ AI-007 ‖ AI-010 (Sprint 1) · AI-006 ‖ AI-008 (Sprint 2) · AI-009 ‖ AI-011 ‖ AI-012 (Sprint 3)
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function filterBy(type, value) {
+  document.querySelectorAll('.filter-chip').forEach(function(c) {
+    if (c.getAttribute('onclick') && c.getAttribute('onclick').includes("'" + type + "'")) {
+      c.classList.toggle('active', c.getAttribute('onclick').includes("'" + value + "'"));
+    }
+  });
+  document.querySelectorAll('.task-row').forEach(function(row) {
+    if (value === 'all') { row.style.display = ''; return; }
+    row.style.display = row.getAttribute('data-' + type) === value ? '' : 'none';
+  });
+}
+</script>
+<script src="../_shared/nav.js"></script>
+</body>
+</html>

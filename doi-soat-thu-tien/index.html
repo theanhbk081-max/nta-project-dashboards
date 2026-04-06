@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đối soát Thu tiền — Tổng Quan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class'}</script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../_shared/theme.css">
+</head>
+<body class="dark">
+
+<script>
+window.DASHBOARD_CONFIG = {
+  name: 'Đối soát Thu tiền',
+  emoji: '💰',
+  accent: '#ef4444',
+  statusBadge: { text: '● P1 Đang triển khai', bg: 'rgba(239,68,68,0.2)', color: '#f87171' },
+  pages: [
+    { href: 'index.html', icon: '🏠', label: 'Tổng Quan' },
+    { href: 'tasks.html', icon: '📋', label: 'Tasks' },
+    { href: 'milestones.html', icon: '🎯', label: 'Milestones' },
+    { href: 'decisions.html', icon: '⚡', label: 'Quyết Định' },
+    { href: 'team.html', icon: '👥', label: 'Team' }
+  ]
+};
+</script>
+<div id="topnav"></div>
+<div id="bottomnav"></div>
+
+<!-- === HERO === -->
+<div class="hero">
+  <div class="container" style="padding:3rem 1rem 2.5rem">
+    <div style="text-align:center;margin-bottom:1rem">
+      <span class="badge badge-danger" style="font-size:0.8rem;padding:4px 12px">
+        P1 Khẩn cấp — Deadline 07-14/04/2026
+      </span>
+    </div>
+    <h1 class="gradient-text" style="text-align:center;font-size:2.5rem;font-weight:800">
+      💰 Đối soát Thu tiền
+    </h1>
+    <p style="text-align:center;color:var(--text-muted);margin-top:0.5rem">
+      Chuẩn hóa quy trình đối soát 7 luồng thu tiền GEARVN · 12 Action Items · 3 Phases
+    </p>
+
+    <!-- KPI Cards -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin-top:2rem;max-width:800px;margin-left:auto;margin-right:auto">
+      <div class="stat-card">
+        <div class="stat-value" style="color:var(--accent)">12</div>
+        <div class="stat-label">Action Items</div>
+        <div class="stat-label">AI-001 → AI-012</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" style="color:var(--danger)">4</div>
+        <div class="stat-label">Tasks P1 Khẩn cấp</div>
+        <div class="stat-label" style="color:var(--danger)">● Deadline 07-14/04</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" style="color:var(--warning)">7</div>
+        <div class="stat-label">Luồng Thu Tiền</div>
+        <div class="stat-label">POS · CK · COD · Sàn · HDS · Ví · CN</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" style="color:var(--success)">25/05</div>
+        <div class="stat-label">Target Hoàn Thành</div>
+        <div class="stat-label">3 Sprints P2/P3</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="padding-top:2rem">
+
+  <!-- === BỐI CẢNH === -->
+  <h2 class="section-header">🔥 Bối Cảnh & Trigger</h2>
+  <div class="alert alert-danger" style="margin-bottom:1.5rem">
+    <div style="flex:1">
+      <div style="font-weight:700;color:var(--danger)">Phát hiện gian lận phiếu thu tại NCV — 04/04/2026</div>
+      <div style="font-size:0.85rem;color:var(--text-secondary);margin-top:0.25rem">
+        Token bị lộ → 5-6 case lừa đảo, tạo phiếu thu CK giả không cần giao dịch NH thực. Hệ thống cho phép tạo phiếu thu tự do — lỗ hổng nghiêm trọng cần fix ngay.
+      </div>
+    </div>
+  </div>
+
+  <!-- === 7 LUỒNG THU TIỀN === -->
+  <h2 class="section-header">💳 7 Luồng Thu Tiền</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0.75rem;margin-bottom:2rem">
+    <div class="card" style="text-align:center;padding:1rem">
+      <div style="font-size:1.5rem">🏪</div>
+      <div style="font-weight:600;font-size:0.85rem;margin-top:0.25rem">POS</div>
+      <div style="font-size:0.7rem;color:var(--text-muted)">TM / Thẻ / QR</div>
+      <span class="badge badge-info" style="margin-top:0.5rem">AI-005, AI-006</span>
+    </div>
+    <div class="card" style="text-align:center;padding:1rem">
+      <div style="font-size:1.5rem">🏦</div>
+      <div style="font-weight:600;font-size:0.85rem;margin-top:0.25rem">Chuyển khoản</div>
+      <div style="font-size:0.7rem;color:var(--text-muted)">Banking</div>
+      <span class="badge badge-danger" style="margin-top:0.5rem">AI-002, AI-003</span>
+    </div>
+    <div class="card" style="text-align:center;padding:1rem">
+      <div style="font-size:1.5rem">🚚</div>
+      <div style="font-weight:600;font-size:0.85rem;margin-top:0.25rem">COD</div>
+      <div style="font-size:0.7rem;color:var(--text-muted)">Ship thu hộ</div>
+      <span class="badge badge-warning" style="margin-top:0.5rem">AI-008, AI-009</span>
+    </div>
+    <div class="card" style="text-align:center;padding:1rem">
+      <div style="font-size:1.5rem">🛒</div>
+      <div style="font-weight:600;font-size:0.85rem;margin-top:0.25rem">Sàn TMĐT</div>
+      <div style="font-size:0.7rem;color:var(--text-muted)">Shopee / Lazada / TikTok</div>
+      <span class="badge badge-info" style="margin-top:0.5rem">AI-010</span>
+    </div>
+    <div class="card" style="text-align:center;padding:1rem">
+      <div style="font-size:1.5rem">💳</div>
+      <div style="font-weight:600;font-size:0.85rem;margin-top:0.25rem">Trả góp HDS</div>
+      <div style="font-size:0.7rem;color:var(--text-muted)">HD Saison</div>
+      <span class="badge badge-info" style="margin-top:0.5rem">AI-007</span>
+    </div>
+    <div class="card" style="text-align:center;padding:1rem">
+      <div style="font-size:1.5rem">📱</div>
+      <div style="font-weight:600;font-size:0.85rem;margin-top:0.25rem">Ví điện tử</div>
+      <div style="font-size:0.7rem;color:var(--text-muted)">Momo / ZaloPay</div>
+      <span class="badge badge-muted" style="margin-top:0.5rem">P2+</span>
+    </div>
+    <div class="card" style="text-align:center;padding:1rem">
+      <div style="font-size:1.5rem">📋</div>
+      <div style="font-weight:600;font-size:0.85rem;margin-top:0.25rem">Công nợ</div>
+      <div style="font-size:0.7rem;color:var(--text-muted)">B2B</div>
+      <span class="badge badge-muted" style="margin-top:0.5rem">P2+</span>
+    </div>
+  </div>
+
+  <!-- === PHASE PROGRESS === -->
+  <h2 class="section-header">🚀 Tiến Độ Theo Phase</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-bottom:2rem">
+
+    <!-- P1 -->
+    <div class="sprint-card active" style="border-color:var(--danger)">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem">
+        <strong style="color:var(--danger)">P1 — Khẩn Cấp</strong>
+        <span class="badge badge-danger">🔴 ĐANG LÀM</span>
+      </div>
+      <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.5rem">05/04 → 14/04/2026 · 4 tasks</div>
+      <div class="progress-bar"><div class="progress-fill" style="width:25%;background:var(--danger)"></div></div>
+      <div style="display:flex;justify-content:space-between;font-size:0.75rem;color:var(--text-muted);margin-top:0.5rem">
+        <span>1/4 tasks (AI-001 đang deploy)</span>
+        <span style="color:var(--danger)">Deadline hôm nay!</span>
+      </div>
+      <div style="font-size:0.75rem;color:var(--text-secondary);margin-top:0.5rem">
+        AI-001 Màn hình phải thu · AI-002 Rule CK · AI-003 Clear phiếu cũ · AI-004 TM 2 bước
+      </div>
+    </div>
+
+    <!-- P2 -->
+    <div class="sprint-card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem">
+        <strong>P2 — Chuẩn Hóa Pipeline</strong>
+        <span class="badge badge-muted">⏳ CHỜ P1</span>
+      </div>
+      <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.5rem">14/04 → 11/05/2026 · 5 tasks</div>
+      <div class="progress-bar"><div class="progress-fill" style="width:0%;background:var(--info)"></div></div>
+      <div style="display:flex;justify-content:space-between;font-size:0.75rem;color:var(--text-muted);margin-top:0.5rem">
+        <span>0/5 tasks</span>
+        <span>Sprint 1-2</span>
+      </div>
+      <div style="font-size:0.75rem;color:var(--text-secondary);margin-top:0.5rem">
+        AI-005 POS/MISA · AI-006 Mã chuẩn chi · AI-007 HDS · AI-008 COD · AI-010 Sàn 3C
+      </div>
+    </div>
+
+    <!-- P3 -->
+    <div class="sprint-card">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem">
+        <strong>P3 — Bàn Giao & SOP</strong>
+        <span class="badge badge-muted">⏳ CHỜ P2</span>
+      </div>
+      <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.5rem">12/05 → 25/05/2026 · 3 tasks</div>
+      <div class="progress-bar"><div class="progress-fill" style="width:0%;background:var(--success)"></div></div>
+      <div style="display:flex;justify-content:space-between;font-size:0.75rem;color:var(--text-muted);margin-top:0.5rem">
+        <span>0/3 tasks</span>
+        <span>Sprint 3</span>
+      </div>
+      <div style="font-size:0.75rem;color:var(--text-secondary);margin-top:0.5rem">
+        AI-009 Bàn giao COD · AI-011 Onboarding OBS Đệ · AI-012 SOP pháp lý
+      </div>
+    </div>
+  </div>
+
+  <!-- === MILESTONES QUICK VIEW === -->
+  <h2 class="section-header">🎯 Milestones</h2>
+  <div style="margin-bottom:2rem;padding-left:0.5rem">
+    <div class="milestone-item at-risk">
+      <div>
+        <div style="display:flex;align-items:center;gap:0.5rem">
+          <span style="font-size:1.5rem;font-weight:800;color:var(--danger)">M1</span>
+          <strong>Khẩn Cấp — Fix lỗ hổng & Visibility</strong>
+          <span class="badge badge-danger">🔴 ĐANG LÀM</span>
+          <span style="font-size:0.75rem;color:var(--text-muted)">05/04 → 14/04</span>
+        </div>
+        <div style="font-size:0.8rem;color:var(--text-muted);margin-top:0.25rem">
+          Gate: AI-001→004 hoàn thành, QLSR UAT pass · AI-001 deploy hôm nay
+        </div>
+      </div>
+    </div>
+    <div class="milestone-item">
+      <div>
+        <div style="display:flex;align-items:center;gap:0.5rem">
+          <span style="font-size:1.5rem;font-weight:800;color:var(--text-muted)">M2</span>
+          <strong>Chuẩn Hóa — Pipeline Đối Soát</strong>
+          <span class="badge badge-muted">⏳ PENDING</span>
+          <span style="font-size:0.75rem;color:var(--text-muted)">14/04 → 11/05</span>
+        </div>
+        <div style="font-size:0.8rem;color:var(--text-muted);margin-top:0.25rem">
+          Gate: Pipeline HDS + COD + Sàn auto-match ≥ 95% · POS/MISA gap analysis done
+        </div>
+      </div>
+    </div>
+    <div class="milestone-item">
+      <div>
+        <div style="display:flex;align-items:center;gap:0.5rem">
+          <span style="font-size:1.5rem;font-weight:800;color:var(--text-muted)">M3</span>
+          <strong>Bàn Giao & Vận Hành</strong>
+          <span class="badge badge-muted">⏳ PENDING</span>
+          <span style="font-size:0.75rem;color:var(--text-muted)">12/05 → 25/05</span>
+        </div>
+        <div style="font-size:0.8rem;color:var(--text-muted);margin-top:0.25rem">
+          Gate: OPD tự vận hành COD 2 tuần, OBS Đệ onboarded, SOP pháp lý approved
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- === CHARTS === -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-bottom:2rem">
+    <div class="card">
+      <h3 class="section-header" style="font-size:1rem">🍩 Phân Bổ Task Theo Priority</h3>
+      <canvas id="priorityChart" height="200"></canvas>
+    </div>
+    <div class="card">
+      <h3 class="section-header" style="font-size:1rem">📊 Tasks Theo Phase</h3>
+      <canvas id="phaseChart" height="200"></canvas>
+    </div>
+  </div>
+
+  <!-- === CRITICAL ALERTS === -->
+  <h2 class="section-header">🚨 Cảnh Báo Quan Trọng</h2>
+  <div style="margin-bottom:2rem">
+    <div class="alert alert-danger">
+      <div style="flex:1">
+        <div style="font-weight:700;color:var(--danger)">AI-001 — Deploy màn hình phải thu: DEADLINE HÔM NAY 07/04</div>
+        <div style="font-size:0.85rem;color:var(--text-secondary);margin-top:0.25rem">
+          Nam đang deploy. QLSR các showroom chuẩn bị UAT ngay sau khi deploy xong.
+        </div>
+      </div>
+      <a href="tasks.html" class="badge badge-danger" style="text-decoration:none;white-space:nowrap">Xem Tasks</a>
+    </div>
+    <div class="alert alert-warning">
+      <div style="flex:1">
+        <div style="font-weight:700;color:var(--warning)">Nam là bottleneck — 6/8 tasks P2/P3 cần Nam</div>
+        <div style="font-size:0.85rem;color:var(--text-secondary);margin-top:0.25rem">
+          Cân nhắc thêm Data Engineer hỗ trợ pipeline AI-007, AI-008, AI-010 để giảm tải.
+        </div>
+      </div>
+    </div>
+    <div class="alert alert-info">
+      <div style="flex:1">
+        <div style="font-weight:700;color:var(--info)">5 blockers cần giải quyết trước 08/04</div>
+        <div style="font-size:0.85rem;color:var(--text-secondary);margin-top:0.25rem">
+          Kế toán trưởng confirm business rules AI-002 + AI-004, cung cấp sao kê NH, xác nhận phân quyền role.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- === CHARTS JS === -->
+<script>
+new Chart(document.getElementById('priorityChart'), {
+  type: 'doughnut',
+  data: {
+    labels: ['P1 Khẩn cấp', 'P2 Chuẩn hóa', 'P3 Bàn giao'],
+    datasets: [{ data: [4, 5, 3], backgroundColor: ['#ef4444','#3b82f6','#22c55e'] }]
+  },
+  options: { responsive: true, plugins: { legend: { position: 'bottom', labels: { color: '#a1a1aa', font: { size: 11 } } } } }
+});
+new Chart(document.getElementById('phaseChart'), {
+  type: 'bar',
+  data: {
+    labels: ['P1 (05-14/04)', 'Sprint 1 (14-27/04)', 'Sprint 2 (28/04-11/05)', 'Sprint 3 (12-25/05)'],
+    datasets: [
+      { label: 'Đang làm', data: [4, 0, 0, 0], backgroundColor: '#ef4444' },
+      { label: 'Chờ', data: [0, 3, 2, 3], backgroundColor: '#71717a' },
+    ]
+  },
+  options: { responsive: true, indexAxis: 'y', scales: { x: { ticks: { color: '#71717a' }, beginAtZero: true }, y: { ticks: { color: '#a1a1aa', font: { size: 11 } } } }, plugins: { legend: { labels: { color: '#a1a1aa' } } } }
+});
+</script>
+<script src="../_shared/nav.js"></script>
+</body>
+</html>
